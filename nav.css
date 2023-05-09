@@ -1,0 +1,38 @@
+nav{
+    /*background-color: #7fffd4;*/
+
+}
+
+
+a.navbar-brand{
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    margin-left: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+a.navbar-brand:hover{
+    color: whitesmoke;
+    transition: color 0.4s ease-in-out;
+    transform: scale3d(1.1, 1.1, 1.1);
+    transition: transform 0.3s ease-in-out;
+
+    
+
+}
+
+a.nav-link{
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    margin-right: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+a.nav-link:hover{
+    color: whitesmoke;
+    transition: color 0.4s ease-in-out;
+    transform: scale3d(1.1, 1.1, 1.1);
+    transition: transform 0.3s ease-in-out;
+}

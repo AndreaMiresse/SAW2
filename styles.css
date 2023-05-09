@@ -1,0 +1,24 @@
+@import "body.css";
+@import "nav.css";
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    margin-top: 100px;
+}
+
+p{
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    text-align: left;
+    margin-top: 50px;
+}
+
+a.nav-link{
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
