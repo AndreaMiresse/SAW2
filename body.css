@@ -2,7 +2,8 @@ html{
     height:100%;
 }
 
-body{
+body{    
+    background-attachment: fixed !important;
     width: 100%;
     height: 100%;
     background-color: #7fffd4;
@@ -15,4 +16,5 @@ body{
     top: 0;
     bottom: 0;
     right: 0;
+
 }
