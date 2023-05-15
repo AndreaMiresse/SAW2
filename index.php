@@ -65,7 +65,7 @@
 
     </div>-->
 
-    <button type="button" class="btn btn-primary rounded-circle p-2" id="back-to-top" style="position: fixed; bottom: 20px; right: 20px; display: none; width: 50px; height: 50px;">
+    <button type="button" class="btn btn-primary rounded-circle p-2" id="back-to-top" style="position: fixed; bottom: 20px; right: 20px; display: none; width: 50px; height: 50px; border-color: black; border-width: 2px">
     <i class="fas fa-arrow-up"></i>
     </button>
 <!-- Add this JavaScript code to your HTML -->

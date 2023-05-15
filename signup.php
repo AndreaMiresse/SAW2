@@ -57,15 +57,12 @@ function Validate() : void {
 
 	}
 }
-?>
-
-
     session_start();
 ?>
 <!DOCTYPE html>
 <head>
-<<<<<<< HEAD
     <?php include 'head.php';?>
+	<link rel="stylesheet" href="./signup.css" type="text/css">
     <title>Register</title>
 </head>
     
@@ -75,14 +72,19 @@ function Validate() : void {
         include ('navIndex.php');
     ?>
 
-    <form action="registration.php" method="post"> <!-- bisogna usare quello fornito dalla prof -->
-          <input type="text" name="firstname" placeholder="Nome"><br><br>
-          <input type="text" name="lastname" placeholder="Cognome"><br><br>
-          <input type="email" name="email" placeholder="Email"><br><br>
-          <input type="password" name="pass" placeholder="Password"><br><br>
-          <input type="password" name="confirm" placeholder="Conferma password"><br><br>
-          <input type="submit" name="submit" value="Invia"><br>
-  </form> 
+	<div class="form">
+		<h1>Registrati</h1>
+		<form action="registration.php" method="post"> <!-- bisogna usare quello fornito dalla prof -->
+			<input type="text" name="firstname" placeholder="Nome"><br><br>
+			<input type="text" name="lastname" placeholder="Cognome"><br><br>
+			<input type="email" name="email" placeholder="Email"><br><br>
+			<input type="password" name="pass" placeholder="Password"><br><br>
+			<input type="password" name="confirm" placeholder="Conferma password"><br><br>
+			<input type="submit" name="submit" value="Registrati"><br>
+  		</form> 
+
+	</div>
+
 </body>
 
 </html>
