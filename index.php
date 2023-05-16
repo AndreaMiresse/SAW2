@@ -32,7 +32,7 @@
             </div>
             
             <div class="col-12 col-md-8">
-                <img src="sawIndex.png" alt="immagini di grandi sportivi" class="img-fluid mx-auto d-block">
+                <img src="seiStatoBrasilato.jpg" alt="immagini di grandi sportivi" class="img-fluid mx-auto d-block">
             </div>
         </div>  
 

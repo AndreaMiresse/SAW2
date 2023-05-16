@@ -10,7 +10,7 @@
     border-bottom-right-radius: 5%;">
 
     
-<a class="navbar-brand" href="index.php">Sporty</a>
+<a class="navbar-brand" href="index.php">SawSporty</a>
 <ul class="nav justify-content-end">
     <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="login.php">Login</a>
