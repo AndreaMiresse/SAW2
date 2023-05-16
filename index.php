@@ -68,12 +68,12 @@
     <button type="button" class="btn btn-primary rounded-circle p-2" id="back-to-top" style="position: fixed; bottom: 20px; right: 20px; display: none; width: 50px; height: 50px; border-color: black; border-width: 2px">
     <i class="fas fa-arrow-up"></i>
     </button>
-<!-- Add this JavaScript code to your HTML -->
+<!--Usiamo Javacript con HTML -->
 <script>
-    // Get the button
+    //Prendiamo il bottone
     var backToTopButton = document.getElementById("back-to-top");
 
-    // When the user scrolls down 20px from the top of the document, show the button
+    // Quando scrolla più di 20px dal top del documento, mostra il bottone
     window.onscroll = function() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             backToTopButton.style.display = "block";
@@ -82,7 +82,7 @@
         }
     };
 
-    // When the user clicks on the button, scroll to the top of the document
+    // Al click torna in cima al documento
     backToTopButton.onclick = function() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
