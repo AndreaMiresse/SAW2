@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 15, 2023 alle 15:29
+-- Creato il: Mag 16, 2023 alle 17:30
 -- Versione del server: 10.4.25-MariaDB
 -- Versione PHP: 8.1.10
 
@@ -71,7 +71,6 @@ CREATE TABLE `user` (
   `Surname` varchar(30) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `Pass` varchar(255) NOT NULL,
-  `Birth_date` date NOT NULL,
   `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -79,8 +78,8 @@ CREATE TABLE `user` (
 -- Dump dei dati per la tabella `user`
 --
 
-INSERT INTO `user` (`Name`, `Surname`, `Email`, `Pass`, `Birth_date`, `User_id`) VALUES
-('dummy', 'dummy', 'd@d.com', '$2y$10$e8.mw78UIZ0lka/JULuI3e9rRsV2perlgnEKjzbaTrHwwoiZYIclW', '2023-03-27', 7);
+INSERT INTO `user` (`Name`, `Surname`, `Email`, `Pass`, `User_id`) VALUES
+('dummy', 'dummy', 'd@d.com', '$2y$10$e8.mw78UIZ0lka/JULuI3e9rRsV2perlgnEKjzbaTrHwwoiZYIclW', 7);
 
 --
 -- Indici per le tabelle scaricate
