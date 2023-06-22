@@ -34,6 +34,8 @@
         else{
             $_POST['email'] = trim($_POST['email']);
             $_POST['pass'] = trim($_POST['pass']);
+            $_POST['email'] = htmlspecialchars($_POST['email']);
+            $_POST['pass'] = htmlspecialchars($_POST['pass']);
         }
     }
    

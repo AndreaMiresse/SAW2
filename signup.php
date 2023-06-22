@@ -41,6 +41,10 @@ function Validate() : void {
 		throw new RuntimeException("un campo è vuoto");
 	}
 	else{
+		$_POST['firstname'] = htmlspecialchars($_POST['firstname']);
+		$_POST['lastname'] =  htmlspecialchars($_POST['lasttname']);
+		$_POST['email'] =htmlspecialchars($_POST['email']);
+		$_POST['pass'] = htmlspecialchars($_POST['pass']);
 		$_POST['firstname'] = trim($_POST['firstname']);
 		$_POST['lastname'] =  trim($_POST['lastname']);
 		$_POST['email'] = trim($_POST['email']);

@@ -12,8 +12,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){// se la richiesta è post vai avanti
 		
 		$password=$_POST['pass'];
 		$hash = password_hash($password, PASSWORD_DEFAULT);
-		$stmt = $con->prepare("INSERT INTO user(firstname,lastname,Email,Pass, Birth_date) VALUES(?,?,?,?,?)"); // preparo la query
-		$stmt->bind_param("sssss", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $hash, $_POST['Birth_date']); // passo ai parametri i valori
+		$stmt = $con->prepare("INSERT INTO user(Name,Surname,Email,Pass) VALUES(?,?,?,?)"); // preparo la query
+		$stmt->bind_param("ssss", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $hash); // passo ai parametri i valori
 		$stmt->execute();
 		$_SESSION['user_id']= $stmt->insert_id;
 		$stmt->close();
@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){// se la richiesta è post vai avanti
 }
  
 function Validate() : void {
-	if((empty($_POST['firstname']))|| (empty($_POST['lastname']))|| (empty($_POST['email']))|| (empty($_POST['pass']))|| (empty($_POST['confirm']))|| (empty($_POST['Birth_date'])) ){
+	if((empty($_POST['firstname']))|| (empty($_POST['lastname']))|| (empty($_POST['email']))|| (empty($_POST['pass']))) {
 		throw new RuntimeException("un campo è vuoto");
 	}
 	else{
