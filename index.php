@@ -8,6 +8,7 @@
     
 <head>
     <?php include 'head.php';?>
+    <title>SawCospito</title>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
     <br>
 
 
-    <div class="container" name="indexGrid">
+    <div class="container">
         
         <div class="row">
 
@@ -27,12 +28,11 @@
                 <h1>Let's play</h1>
                 <p>Con Sporty puoi organizzare e partecipare ad eventi sportivi nei tuoi dintorni.
                 <br><br>Inizia subito a giocare!</p>
-                </p>
 
             </div>
             
             <div class="col-12 col-md-8">
-                <img src="seiStatoBrasilato.jpg" alt="immagini di grandi sportivi" class="img-fluid mx-auto d-block">
+                <img src="sawIndex.png" alt="immagini di grandi sportivi" class="img-fluid mx-auto d-block">
             </div>
         </div>  
 
