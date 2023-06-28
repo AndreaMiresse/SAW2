@@ -1,3 +1,4 @@
+
 <nav class="navbar" style="box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
     0 2px 2px rgba(0,0,0,0.12), 
     0 4px 4px rgba(0,0,0,0.12), 
@@ -11,12 +12,18 @@
 
     
 <a class="navbar-brand" href="index.php">SawSporty</a>
-<ul class="nav justify-content-end">
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="login.php">Login</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="signup.php">Registrati</a>
-    </li>
+
+<div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown link
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+
 
 </nav>

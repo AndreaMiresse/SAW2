@@ -17,6 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){// se la richiesta è post vai avanti
 		$stmt->bind_param("ssss", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $hash); // passo ai parametri i valori
 		$stmt->execute();
 		$_SESSION['user_id']= $stmt->insert_id;
+		$_SESSION['name']=$_POST['firstname'];
 		$stmt->close();
 		$con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
 

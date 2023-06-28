@@ -19,7 +19,7 @@
             }
             else{
                 $_SESSION['user_id']= $row['User_id'];
-                echo $_SESSION['user_id'];
+                $_SESSION['name']=$_POST['firstname'];
                 header("Location: home.php");
             }
         }
