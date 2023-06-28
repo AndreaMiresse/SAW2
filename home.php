@@ -12,9 +12,7 @@ else{
 ?>
 <!DOCTYPE html>
     <head>
-        
         <title>Home</title>
-        <link rel="stylesheet" href="style.css">
     </head>
 <body> <p> Hello Cospito</p> </body>
 
