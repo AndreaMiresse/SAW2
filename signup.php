@@ -66,18 +66,13 @@ function Validate() : void {
 <!DOCTYPE html>
 <head>
     <?php include 'head.php';?>
-	<link rel="stylesheet" href="./signup.css" type="text/css">
+	<link rel="stylesheet" href="../css/signup.css" type="text/css">
     <title>Register</title>
 </head>
     
 <body>
-
-    <?php
-        include ('navIndex.php');
-    ?>
-
-	<div class="form">
-		<h1>Registrati</h1>
+    <?php include ('navIndex.php');?>
+		<h1 id="titr">Registrati</h1>
 		<form action="registration.php" method="post"> <!-- bisogna usare quello fornito dalla prof -->
 			<input type="text" name="firstname" placeholder="Nome"><br><br>
 			<input type="text" name="lastname" placeholder="Cognome"><br><br>
@@ -85,11 +80,7 @@ function Validate() : void {
 			<input type="password" name="pass" placeholder="Password"><br><br>
 			<input type="password" name="confirm" placeholder="Conferma password"><br><br>
 			<input type="submit" name="submit" value="Registrati"><br>
-  		</form> 
-
-	</div>
-
+  		</form>
 </body>
-
 </html>
 

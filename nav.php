@@ -13,17 +13,20 @@
     
 <a class="navbar-brand" href="index.php">SawSporty</a>
 
-<div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown link
-  </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
+
+
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Ciao, <?php echo $_SESSION['name'];?></a>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><a class="dropdown-item" href="#">Profilo</a></li>
+    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+  </ul>
+
+
+</button>
+
+
+</ul>
 </div>
-
 
 </nav>

@@ -38,7 +38,7 @@
 
         <div class="row">
             <div class="col-12 col-md-5 order-2 order-md-1">
-                <img src="sawIndex.png" alt="immagini di grandi sportivi" width="1536" height="1536">
+                <img src="seiStatoBrasilato.jpg" alt="immagini di grandi sportivi" width="1536" height="1536">
             </div>
 
             <div class="col-12 col-md-7 order-1 order-md-2">
