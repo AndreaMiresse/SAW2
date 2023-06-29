@@ -10,8 +10,8 @@
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;">
 
-    
-<a class="navbar-brand" href="index.php">SawSporty</a>
+
+<a class="navbar-brand" href="home.php">SawSporty</a>
 
 
 

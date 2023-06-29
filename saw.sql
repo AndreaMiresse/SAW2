@@ -78,8 +78,7 @@ CREATE TABLE `user` (
 -- Dump dei dati per la tabella `user`
 --
 
-INSERT INTO `user` (`Name`, `Surname`, `Email`, `Pass`, `User_id`) VALUES
-('dummy', 'dummy', 'd@d.com', '$2y$10$e8.mw78UIZ0lka/JULuI3e9rRsV2perlgnEKjzbaTrHwwoiZYIclW', 7);
+
 
 --
 -- Indici per le tabelle scaricate
@@ -138,7 +137,7 @@ ALTER TABLE `sport`
 -- AUTO_INCREMENT per la tabella `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- Limiti per le tabelle scaricate
