@@ -44,10 +44,10 @@
 <!DOCTYPE html>
 <head>
   <?php include 'head.php';?>
-</head>
+  <?php include 'nav.php';?> 
+  <title>Login</title>
 
-<body>
-    <title>Login</title>
+</head>
 
     <body>
         <form action="login.php" method="post">
@@ -55,4 +55,7 @@
             <input type="password" name="pass" placeholder="Password">
             <input type="submit" name="submit" value="Login">
         </form>
+
+        <?php include 'script.php';?>
+    </body>
 </html>
