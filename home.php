@@ -11,11 +11,9 @@ else{
     
 ?>
 <!DOCTYPE html>
-
     <head>
         <title>Home</title>
         <?php include 'head.php';?>
-        
     </head>
 <body> <p> Hello Cospito</p> 
     <form id="logout" action="logout.php" method="post">
