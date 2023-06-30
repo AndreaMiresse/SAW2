@@ -44,7 +44,7 @@
 <!DOCTYPE html>
 <head>
   <?php include 'head.php';?>
-  <?php include 'nav.php';?> 
+  <?php include 'navIndex.php';?> 
   <title>Login</title>
 
 </head>
