@@ -71,7 +71,7 @@ function Validate() : void {
 </head>
     
 <body>
-    <?php include ('nav.php');?>
+    <?php include ('navIndex.php');?>
 		<h1 id="titr">Registrati</h1>
 		<form action="registration.php" method="post"> <!-- bisogna usare quello fornito dalla prof -->
 			<input type="text" name="firstname" placeholder="Nome"><br><br>
