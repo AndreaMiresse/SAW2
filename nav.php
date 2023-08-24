@@ -8,7 +8,8 @@
     top: 0;
     background-color: #7FFFD4;
     border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;">
+    border-bottom-right-radius: 5%;
+    z-index: 9999">
 
 
 <a class="navbar-brand" href="home.php">SawSporty</a>
