@@ -37,7 +37,7 @@ else{
                 <div class="carousel-item active">
                 <div class="card-group">
 
-                    <div class="card" style="width: 22rem; height: auto">
+                    <div class="card text-center" style="width: 22rem; height: auto">
                         <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                         <div class="card-body">
                             <div class="icon"><span class="material-symbols-outlined">sports_soccer</span></div>
@@ -46,7 +46,7 @@ else{
                         </div>
                         </div>
 
-                    <div class="card" style="width: 22rem; ">
+                    <div class="card text-center" style="width: 22rem; ">
                     <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <div class="icon"><span class="material-symbols-outlined">sports_basketball</span></div>
@@ -55,7 +55,7 @@ else{
                     </div>
                     </div>
 
-                    <div class="card" style="width: 22rem;">
+                    <div class="card text-center" style="width: 22rem;">
                     <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <div class="icon"><span class="material-symbols-outlined">sports_tennis</span></div>
@@ -69,7 +69,7 @@ else{
 
                 <div class="carousel-item">
                     <div class="card-group">
-                    <div class="card" style="width: 22rem; height: auto">
+                    <div class="card text-center" style="width: 22rem; height: auto">
                         <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Calcio</h5>
@@ -77,7 +77,7 @@ else{
                         </div>
                         </div>
 
-                    <div class="card" style="width: 22rem; ">
+                    <div class="card text-center" style="width: 22rem; ">
                     <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Basket</h5>
@@ -85,7 +85,7 @@ else{
                     </div>
                     </div>
 
-                    <div class="card" style="width: 22rem;">
+                    <div class="card text-center" style="width: 22rem;">
                     <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Tennis</h5>
@@ -98,7 +98,7 @@ else{
                 
                 <div class="carousel-item">
                 <div class="card-group">
-                    <div class="card">
+                    <div class="card text-center">
                         <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Calcio</h5>
@@ -106,7 +106,7 @@ else{
                         </div>
                         </div>
 
-                    <div class="card" style="width: 22rem; ">
+                    <div class="card text-center" style="width: 22rem; ">
                     <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Basket</h5>
@@ -114,7 +114,7 @@ else{
                     </div>
                     </div>
 
-                    <div class="card" style="width: 22rem;">
+                    <div class="card text-center" style="width: 22rem;">
                     <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Tennis</h5>
@@ -141,16 +141,16 @@ else{
         
 
         <div class="center">
-        <button id="AltriEventi" type="button" class="button" style="margin-top: 10px; box-shadow: 0px 2px 10px darkturquoise; height: auto;">Vedi tutti gli eventi</button>
+        <button type="button" class="button">Vedi tutti gli eventi</button>
         </div>
         <p class="text-left" style="font-size: 50px; font-weight: bold; margin-bottom: 0px; margin-top: 1rem; margin-left: 1rem;">Ti senti propositivo?</p>
 
-        <div class="container" style="padding-bottom: 2%;">
+        <div class="container" style="padding-bottom: 2%; margin-left: 20px; margin-right: 20px;">
             <div class="row">
                 <div class="col-4">
-                    <p style="font-size: 16px; font-weight: medium; margin-bottom: 0px; margin-top: 1rem; margin-left: 1rem;">Crea un evento e invita i tuoi amici!</p>
+                    <p style="font-size: 22px; font-weight: medium; margin-bottom: 0px; margin-top: 1rem; margin-left: 1rem;">Non trovi quello che cerchi? O semplicemente vuoi organizzarti a tuo modo? <br>Crea un evento,invita i tuoi amici e preparati a trovarne di nuovi!</p>
                     <div class="center">
-                    <button type="button" class="button" style="height: auto; width: auto;">Crea un evento</button>
+                    <button type="button" class="button">Crea un evento</button>
                     </div>
                 </div>
 
@@ -167,7 +167,7 @@ else{
 
         <div class="row">
                 <div class="col d-flex justify-content-center">
-                 <div class="card" style="width: 22rem; height: auto">
+                 <div class="card text-center" style="width: 22rem; height: auto">
                     <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Calcio</h5>
@@ -176,7 +176,7 @@ else{
                     </div>   
                 </div>
                 <div class="col d-flex justify-content-center">
-                    <div class="card" style="width: 22rem; ">
+                    <div class="card text-center" style="width: 22rem; ">
                     <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Basket</h5>
@@ -185,7 +185,7 @@ else{
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center">
-                <div class="card" style="width: 22rem;">
+                <div class="card text-center" style="width: 22rem;">
                     <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Tennis</h5>
@@ -197,7 +197,7 @@ else{
 
             <div class="row" style="margin-top: 5%; margin-bottom: 2%">
                 <div class="col d-flex justify-content-center">
-                 <div class="card" style="width: 22rem; height: auto">
+                 <div class="card text-center" style="width: 22rem; height: auto">
                     <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Calcio</h5>
@@ -206,7 +206,7 @@ else{
                     </div>   
                 </div>
                 <div class="col d-flex justify-content-center">
-                    <div class="card" style="width: 22rem;">
+                    <div class="card text-center" style="width: 22rem;">
                     <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Basket</h5>
@@ -215,7 +215,7 @@ else{
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center">
-                <div class="card" style="width: 22rem;">
+                <div class="card text-center" style="width: 22rem;">
                     <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Tennis</h5>
@@ -231,3 +231,4 @@ else{
     </body>
 
 </html>
+

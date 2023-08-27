@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary rounded-circle p-2" id="back-to-top" style="position: fixed; bottom: 20px; right: 20px; display: none; width: 50px; height: 50px; border-color: black; border-width: 2px">
+<button type="button" class="btn btn-primary rounded-circle p-2" id="back-to-top" style="position: fixed; bottom: 20px; right: 20px; display: none; width: 50px; height: 50px; border-color: black; border-width: 2px; border-top-width: 5px; border-left-width: 3px; border-right-width: 3px;">
     <i class="fas fa-arrow-up"></i>
     </button>
 <!--Usiamo Javacript con HTML -->

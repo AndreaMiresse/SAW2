@@ -1,5 +1,5 @@
-@import "body.css";
-@import "nav.css";
+@import "./body.css";
+@import ".css/nav.css";
 
 h1{
     font-size: 50px;
