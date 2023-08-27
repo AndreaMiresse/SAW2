@@ -16,7 +16,7 @@ else{
         <title>Home</title>
         <?php include 'head.php';?>
         <?php include 'nav.php';?>
-        <link  rel="stylesheet" type="text/css" href="./css/home.css">
+        <link  rel="stylesheet" type="text/css" href="./home.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
 
