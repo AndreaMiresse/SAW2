@@ -66,20 +66,32 @@ function Validate() : void {
 <!DOCTYPE html>
 <head>
     <?php include 'head.php';?>
-	<link rel="stylesheet" href="../css/signup.css" type="text/css">
+	<link rel="stylesheet" href="./css/signup.css" type="text/css">
     <title>Register</title>
 </head>
     
 <body>
     <?php include ('navIndex.php');?>
-		<h1 id="titr">Registrati</h1>
+		<h1 id="titr" class="text-center">Registrati</h1>
 		<form action="registration.php" method="post"> <!-- bisogna usare quello fornito dalla prof -->
-			<input type="text" name="firstname" placeholder="Nome"><br><br>
-			<input type="text" name="lastname" placeholder="Cognome"><br><br>
-			<input type="email" name="email" placeholder="Email"><br><br>
-			<input type="password" name="pass" placeholder="Password"><br><br>
-			<input type="password" name="confirm" placeholder="Conferma password"><br><br>
+			<br><div class="text-center">
+			<input type="text" name="firstname" placeholder=" Nome"><br><br>
+			</div>
+			<div class="text-center">
+			<input type="text" name="lastname" placeholder=" Cognome"><br><br>
+			</div>
+			<div class="text-center">
+			<input type="email" name="email" placeholder=" Email"><br><br>
+			</div>
+			<div class="text-center">
+			<input type="password" name="pass" placeholder=" Password"><br><br>
+			</div>
+			<div class="text-center">
+			<input type="password" name="confirm" placeholder=" Conferma password"><br><br>
+			</div>
+			<div class="text-center">
 			<input type="submit" name="submit" value="Registrati"><br>
+			</div>
   		</form>
 </body>
 </html>
