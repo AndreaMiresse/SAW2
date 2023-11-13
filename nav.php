@@ -27,7 +27,7 @@
 
   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Ciao, <?php echo $_SESSION['name'];?></a>
   <ul class="dropdown-menu dropdown-menu-end">
-    <li><a class="dropdown-item" href="#">Profilo</a></li>
+    <li><a class="dropdown-item" href="profile.php">Profilo</a></li>
     <li><a class="dropdown-item" href="logout.php">Logout</a></li>
   </ul>
 
