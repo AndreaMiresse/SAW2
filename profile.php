@@ -21,7 +21,7 @@
 <!DOCTYPE html>
 
     <head>
-        <title>Home</title>
+        <title>Il tuo profilo</title>
         <?php include 'head.php';?>
         <?php include 'nav.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
