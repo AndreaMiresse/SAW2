@@ -21,7 +21,7 @@
 <!DOCTYPE html>
 
     <head>
-        <title>Home</title>
+        <title>Il tuo profilo</title>
         <?php include 'head.php';?>
         <?php include 'nav.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
@@ -50,8 +50,8 @@
                 <input type="password" name="confirm" placeholder=" Conferma password" readonly><br><br>
                 </div>
                 <div class="text-center">
-                <input type="submit" name="submit" value="Salva" onclick="Update()"><br>
-                </div>
+                <input type="submit" name="submit" value="Salva"><br>
+                </div> 
             </form>
 
             <script>
