@@ -33,7 +33,7 @@
 
 
         <button class="btn btn-primary" onclick="updateLayout()">Modifica</button>
-        <form id="formUpdate" onsubmit="Update()" method="post">
+        <form id="formUpdate"  method="post">
                 <br><div class="text-center">
                 <input type="text" name="firstname" placeholder="Nome" value=<?php echo $row['Name']?> readonly><br><br>
                 </div>
@@ -50,7 +50,7 @@
                 <input type="password" name="confirm" placeholder=" Conferma password" readonly><br><br>
                 </div>
                 <div class="text-center">
-                <input type="submit" name="submit" value="Salva"><br>
+                <input type="submit" name="submit" value="Salva" onclick="Update()"><br>
                 </div>
             </form>
 

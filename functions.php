@@ -44,6 +44,7 @@ function Signup() : void{
         $stmt->bind_param("s", $_POST['email']);
         $stmt->execute();
         $result = $stmt->get_result();
+        $stmt->close();
         if($result->num_rows === 0) {
             $password=$_POST['pass'];
             $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -105,7 +106,8 @@ function ValidateUpdate() : void{
 }
 
 function Update() : void{
-    if($_SERVER["REQUEST_METHOD"] == "POST"){// se la richiesta è post vai avanti
+    echo "ciao ecchime";
+    /* if($_SERVER["REQUEST_METHOD"] == "POST"){// se la richiesta è post vai avanti
 		if($_POST['pass'] != $_POST['confirm']){
 			throw new RuntimeException("Le password non coincidono");
 		}
@@ -118,26 +120,29 @@ function Update() : void{
         $stmt->bind_param("s", $_POST['email']);
         $stmt->execute();
         $result = $stmt->get_result();
-        if($result->num_rows === 0) {
+        $row=$result->fetch_assoc();
+        $stmt->close();
+        if($row->num_rows === 1) {
+            echo "ciao";
             $password=$_POST['pass'];
             $hash = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $con->prepare("UPDATE user SET Name=?, Surname=?, Email=?, Pass=? WHERE User_id=?"); // preparo la query
-            $stmt->bind_param("sssss", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $hash, $_SESSION['user_id']); // passo ai parametri i valori
+            $stmt->bind_param("ssssi", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $hash, $_SESSION['user_id']); // passo ai parametri i valori
             $stmt->execute();
             $stmt->close();
             $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
     
-            header("Location: profile.php"); // da aggiornare con prepared statement!!!
+            //header("Location: profile.php"); // da aggiornare con prepared statement!!!
         }
         else{
             echo "email già in uso, riprova";
-            header("Location: profile.php");
+            //header("Location: profile.php");
             $stmt->close();
             $con->close();
         }
         //LA PASSWORD VA MESSA DUE VOLTE PER CONFERMA
         
-    }	
+    }	 */
     
 }
 
