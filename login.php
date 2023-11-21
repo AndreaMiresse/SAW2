@@ -3,7 +3,7 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){// se la richiesta è post vai avanti
         ValidateLogin();
-        include ('connection.php');
+        include ('scripts\connection.php');
         $stmt = $con->prepare("SELECT * FROM user where email=? "); // preparo la query
         $stmt->bind_param("s", $_POST['email']); // passo ai parametri i valori
         $stmt->execute(); 
@@ -70,6 +70,6 @@
             </form>
         </div>
 
-        <?php include 'script.php';?>
+        <?php include 'scripts\script.php';?>
     </body>
 </html>

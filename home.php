@@ -226,7 +226,7 @@ else{
             </div>
         </div> -->
         
-        <?php include 'script.php';?>
+        <?php include 'scripts\script.php';?>
 
     </body>
 

@@ -75,7 +75,7 @@ function Signup() : void{
 
 function ValidateUpdate() : void{
 
-    if((empty($_POST['pass'])) xor (empty($_POST['confirm']))){
+    if((empty($_POST['pass'])) ^ (empty($_POST['confirm']))){
         throw new RuntimeException("Per modificare la password inserisci e conferma la nuova password");
     }
     if($_POST['pass'] != $_POST['confirm']){
@@ -106,11 +106,9 @@ function ValidateUpdate() : void{
 }
 
 function Update() : void{
-    echo "ciao ecchime";
-    /* if($_SERVER["REQUEST_METHOD"] == "POST"){// se la richiesta è post vai avanti
-		if($_POST['pass'] != $_POST['confirm']){
-			throw new RuntimeException("Le password non coincidono");
-		}
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){// se la richiesta è post vai avanti
+
         ValidateUpdate();
 
         include ('connection.php');
@@ -122,7 +120,7 @@ function Update() : void{
         $result = $stmt->get_result();
         $row=$result->fetch_assoc();
         $stmt->close();
-        if($row->num_rows === 1) {
+        if($result->num_rows === 1) {
             echo "ciao";
             $password=$_POST['pass'];
             $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -132,17 +130,16 @@ function Update() : void{
             $stmt->close();
             $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
     
-            //header("Location: profile.php"); // da aggiornare con prepared statement!!!
+            header("Location: ..\profile.php"); // da aggiornare con prepared statement!!!
         }
         else{
             echo "email già in uso, riprova";
-            //header("Location: profile.php");
-            $stmt->close();
+            header("Location: ..\profile.php");
             $con->close();
         }
         //LA PASSWORD VA MESSA DUE VOLTE PER CONFERMA
         
-    }	 */
+    }	
     
 }
 

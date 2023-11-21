@@ -3,8 +3,8 @@
     if(!isset($_SESSION['user_id'])){
         header('location:login.php');
     }
-    include 'connection.php';
-    include 'functions.php';
+    include 'scripts\connection.php';
+    include 'scripts\functions.php';
     
     $stmt=$con->prepare("SELECT * FROM user WHERE User_id= ?");
     $stmt->bind_param("i",$_SESSION['user_id']);
@@ -33,7 +33,7 @@
 
 
         <button class="btn btn-primary" onclick="updateLayout()">Modifica</button>
-        <form id="formUpdate"  method="post">
+        <form id="formUpdate" action="scripts\update.php" method="post">
                 <br><div class="text-center">
                 <input type="text" name="firstname" placeholder="Nome" value=<?php echo $row['Name']?> readonly><br><br>
                 </div>
