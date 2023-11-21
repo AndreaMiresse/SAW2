@@ -5,6 +5,7 @@
     }
     include 'scripts\connection.php';
     include 'scripts\functions.php';
+    include 'scripts\script.php';
     
     $stmt=$con->prepare("SELECT * FROM user WHERE User_id= ?");
     $stmt->bind_param("i",$_SESSION['user_id']);
