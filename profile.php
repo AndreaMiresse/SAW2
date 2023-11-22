@@ -26,6 +26,8 @@
         <?php include 'head.php';?>
         <?php include 'nav.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
+        <link rel="stylesheet" href="./css/signup.css" type="text/css">
+        
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
 
@@ -33,7 +35,7 @@
     <body>
 
 
-        <button class="btn btn-primary" onclick="updateLayout()">Modifica</button>
+        <button class="button" onclick="updateLayout()">Modifica</button>
         <form id="formUpdate" action="scripts\update.php" method="post">
                 <br><div class="text-center">
                 <input type="text" name="firstname" placeholder="Nome" value=<?php echo $row['Name']?> readonly><br><br>
