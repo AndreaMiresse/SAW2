@@ -3,7 +3,7 @@
 ?>
 <!DOCTYPE html>
 <head>
-    <?php include 'head.php';?>
+    <?php require_once 'head.php';?>
 	<link rel="stylesheet" href="./css/signup.css" type="text/css">
     <title>Register</title>
 </head>

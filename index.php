@@ -7,7 +7,7 @@
 <html lang="en">
     
 <head>
-    <?php include 'head.php';?>
+    <?php require_once 'head.php';?>
     <title>SawCospito</title>
 </head>
 

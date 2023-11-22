@@ -14,8 +14,8 @@ else{
 
     <head>
         <title>Home</title>
-        <?php include 'head.php';?>
-        <?php include 'nav.php';?>
+        <?php require_once 'head.php';?>
+        <?php require_once 'nav.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
