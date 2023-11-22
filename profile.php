@@ -3,9 +3,9 @@
     if(!isset($_SESSION['user_id'])){
         header('location:login.php');
     }
-    include 'scripts\connection.php';
-    include 'scripts\functions.php';
-    include 'scripts\script.php';
+    require_once 'scripts\connection.php';
+    require_once 'scripts\functions.php';
+    require_once 'scripts\script.php';
     
     $stmt=$con->prepare("SELECT * FROM user WHERE User_id= ?");
     $stmt->bind_param("i",$_SESSION['user_id']);

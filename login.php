@@ -3,7 +3,7 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){// se la richiesta è post vai avanti
         ValidateLogin();
-        include ('scripts\connection.php');
+        require_once ('scripts\connection.php');
         $stmt = $con->prepare("SELECT * FROM user where email=? "); // preparo la query
         $stmt->bind_param("s", $_POST['email']); // passo ai parametri i valori
         $stmt->execute(); 
