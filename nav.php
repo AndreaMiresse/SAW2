@@ -22,7 +22,7 @@
 
   <div class="center">
     <input id="search" class="form-control" type="search" placeholder="Cerca un evento" aria-label="Search" style="border-color: black ; border-width: 4px; border-top-width: 8px; background-color: whitesmoke; border-radius: 12px">
-    <span class="material-symbols-outlined">search</span>
+    <span class="material-symbols-outlined" onclick="">search</span>
   </div>
 
   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Ciao, <?php echo $_SESSION['name'];?></a>
@@ -30,7 +30,6 @@
     <li><a class="dropdown-item" href="profile.php">Profilo</a></li>
     <li><a class="dropdown-item" href="logout.php">Logout</a></li>
   </ul>
-
 
 
 
