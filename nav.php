@@ -1,4 +1,3 @@
-
 <nav class="navbar" style="
     box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
     0 2px 2px rgba(0,0,0,0.12), 
@@ -22,7 +21,7 @@
 
   <div class="center">
     <input id="search" class="form-control" type="search" placeholder="Cerca un evento" aria-label="Search" style="border-color: black ; border-width: 4px; border-top-width: 8px; background-color: whitesmoke; border-radius: 12px">
-    <span class="material-symbols-outlined" onclick="">search</span>
+    <span class="material-symbols-outlined" action="search.php">search</span>
   </div>
 
   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Ciao, <?php echo $_SESSION['name'];?></a>
@@ -34,3 +33,14 @@
 
 
 </nav>
+
+
+<script>
+  var search = document.getElementById("search");
+  search.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      window.location.href = "search.php?search=" + search.value;
+    }
+  });
+</script>

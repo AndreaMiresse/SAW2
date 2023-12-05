@@ -55,6 +55,7 @@ function Signup() : void{
     
             //$con->query("INSERT INTO user VALUES('".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['email']."','$hash','".$_POST['Birth_date']."','0')");
             $_SESSION['user_id']= $stmt->insert_id;
+            $_SESSION['name']= $_POST['firstname'];
             //da settare la sessione una volta registrato
             $stmt->close();
             $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
@@ -115,13 +116,12 @@ function Update() : void{
         // controllo sulla data di nascita
     
         $stmt = $con->prepare("SELECT * FROM user where email=? "); // controllo se ci sono gia utenti con la stessa email
-        $stmt->bind_param("s", $_POST['email']);
+        $stmt->bind_param("s", $_SESSION['email']);
         $stmt->execute();
         $result = $stmt->get_result();
         $row=$result->fetch_assoc();
         $stmt->close();
         if($result->num_rows === 1) {
-            echo "ciao";
             $password=$_POST['pass'];
             $hash = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $con->prepare("UPDATE user SET Name=?, Surname=?, Email=?, Pass=? WHERE User_id=?"); // preparo la query
@@ -143,9 +143,5 @@ function Update() : void{
     
 }
 
-
-function Search() : void{
-    
-}
 
 ?>

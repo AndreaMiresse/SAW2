@@ -66,7 +66,7 @@
     </div>-->
 
 
-<?php include 'script.php';?>
+<?php require_once './scripts/script.php';?>
 
 
 </body>

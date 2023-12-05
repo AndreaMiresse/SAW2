@@ -4,7 +4,7 @@
     if($_SERVER["REQUEST_METHOD"] == "POST"){// se la richiesta è post vai avanti
         ValidateLogin();
         require_once ('scripts\connection.php');
-        $stmt = $con->prepare("SELECT * FROM user where email=? "); // preparo la query
+        $stmt = $con->prepare("SELECT * FROM user where Email=? "); // preparo la query
         $stmt->bind_param("s", $_POST['email']); // passo ai parametri i valori
         $stmt->execute(); 
         $result = $stmt->get_result();
@@ -20,6 +20,7 @@
             else{
                 $_SESSION['user_id']= $row['User_id'];
                 $_SESSION['name']=$row['Name'];
+                $_SESSION['email']=$row['Email'];
                 header("Location: home.php");
             }
         }

@@ -1,6 +1,6 @@
 <?php
-
-include 'functions.php';
+session_start();
+require_once 'scripts\functions.php';
 Signup();
 
 
