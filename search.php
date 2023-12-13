@@ -39,12 +39,14 @@ require_once ('scripts\connection.php');
         }
         else{
             while($row = $result->fetch_assoc()){
+                if($row['approvato'] == 1){
                 echo "<div class='card' style='width: 18rem;'>";
                 echo "<div class='card-body'>";
                 echo "<h5 class='card-title'>" . htmlspecialchars($row['nome_evento']) . "</h5>";
                 echo "<p class='card-text'>" . htmlspecialchars($row['luogo']) . "</p>";
                 echo "</div>";
                 echo "</div><br>";
+                }
             }
         }
     ?>
