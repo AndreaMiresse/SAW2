@@ -143,5 +143,49 @@ function Update() : void{
     
 }
 
+function Validate_Evento(): void{
+    if($_SERVER["REQUEST_METHOD"] == "POST"){// se la richiesta è post vai avanti
+        if((empty($_POST['nome_evento']))|| (empty($_POST['luogo']))||(empty($_POST['n_par_max']))|| (empty($_POST['id_sport']))) {
+            throw new RuntimeException("un campo è vuoto");
+        }
+        else{
+            $_POST['nome_evento'] = htmlspecialchars($_POST['nome_evento']);
+            $_POST['luogo'] =  htmlspecialchars($_POST['luogo']);
+            $_POST['n_par_max'] =htmlspecialchars($_POST['n_par_max']);
+            $_POST['id_sport'] = htmlspecialchars($_POST['id_sport']);
+            $_POST['nome_evento'] = trim($_POST['nome_evento']);
+            $_POST['luogo'] =  trim($_POST['luogo']);
+            $_POST['n_par_max'] = trim($_POST['n_par_max']);
+            $_POST['id_sport'] = trim($_POST['id_sport']);
+            if((!preg_match("/^[a-zA-Z ]*$/",$_POST['nome_evento']))){
+                throw new RuntimeException('Formato del nome non valido');
+            }
+            if(!preg_match("/^[a-zA-Z ]*$/",$_POST['luogo'])){
+                throw new RuntimeException('Formato del luogo non valido');
+            }
+            if(!preg_match("/^[0-9]*$/",$_POST['n_par_max'])){
+                throw new RuntimeException('Formato del numero partecipanti non valido');
+            }
+            if(!preg_match("/^[0-9]*$/",$_POST['id_sport'])){
+                throw new RuntimeException('Formato dell\'id sport non valido');
+            }
+        }
+       }
 
-?>
+
+}
+
+
+function Crea_Evento() : void{
+    if($_SERVER["REQUEST_METHOD"] == "POST"){// se la richiesta è post vai avanti
+        Validate_Evento();
+        include ('connection.php');
+        $zero=0;
+        $stmt = $con->prepare("INSERT INTO evento(nome_evento, luogo, n_par_max, n_par_corr, id_sport) VALUES(?,?,?,?,?)"); // preparo la query
+        $stmt->bind_param("ssiii", $_POST['nome_evento'], $_POST['luogo'], $_POST['n_par_max'],$zero, $_POST['id_sport']); // passo ai parametri i valori
+        $stmt->execute();
+        $stmt->close();
+        $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
+        header("Location: home.php"); // da aggiornare con prepared statement!!!
+    }
+}
