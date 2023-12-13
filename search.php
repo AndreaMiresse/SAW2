@@ -20,11 +20,6 @@ require_once ('scripts\connection.php');
     $result = $stmt->get_result();
 
 
-    
-
-
-
-
 ?>
 <!DOCTYPE html>
 
@@ -37,19 +32,20 @@ require_once ('scripts\connection.php');
     </head>
 
 
-<body>
+    <body>
     <?php 
         if($result->num_rows === 0){
-            echo "Nessun risultato";
+            echo "<div class='alert alert-danger' role='alert'>Nessun risultato</div>";
         }
         else{
-            $row = $result->fetch_assoc();
-            echo $row['luogo'];
+            while($row = $result->fetch_assoc()){
+                echo "<div class='card' style='width: 18rem;'>";
+                echo "<div class='card-body'>";
+                echo "<h5 class='card-title'>" . htmlspecialchars($row['nome_evento']) . "</h5>";
+                echo "<p class='card-text'>" . htmlspecialchars($row['luogo']) . "</p>";
+                echo "</div>";
+                echo "</div><br>";
+            }
         }
     ?>
-
-
-
-
-
 </body>
