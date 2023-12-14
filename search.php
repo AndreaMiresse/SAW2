@@ -27,6 +27,7 @@ require_once ('scripts\connection.php');
         <title>Search</title>
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
+        <?php include 'scripts\script.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
@@ -38,8 +39,10 @@ require_once ('scripts\connection.php');
             echo "<div class='alert alert-danger' role='alert'>Nessun risultato</div>";
         }
         else{
+            $approvati=0;
             while($row = $result->fetch_assoc()){
                 if($row['approvato'] == 1){
+                $approvati=1;
                 echo "<div class='card' style='width: 18rem;'>";
                 echo "<div class='card-body'>";
                 echo "<h5 class='card-title'>" . htmlspecialchars($row['nome_evento']) . "</h5>";
@@ -47,6 +50,9 @@ require_once ('scripts\connection.php');
                 echo "</div>";
                 echo "</div><br>";
                 }
+            }
+            if($approvati==0){
+                echo "<div class='alert alert-danger' role='alert'>Nessun risultato</div>";
             }
         }
     ?>

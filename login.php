@@ -18,9 +18,15 @@
                 echo "password errata";
             }
             else{
+                if($row['admin']==1){
+                    $_SESSION['user_id']= $row['User_id'];
+                    $_SESSION['name']=$row['Name'];
+                    $_SESSION['admin']=$row['admin'];
+                    header("Location: admin.php");
+                }
                 $_SESSION['user_id']= $row['User_id'];
                 $_SESSION['name']=$row['Name'];
-                $_SESSION['email']=$row['Email'];
+                
                 header("Location: home.php");
             }
         }
