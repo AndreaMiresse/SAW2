@@ -20,7 +20,7 @@
 
 
   <div class="center">
-    <input id="search" class="form-control" type="search" placeholder="Cerca un evento" aria-label="Search" style="border-color: black ; border-width: 4px; border-top-width: 8px; background-color: whitesmoke; border-radius: 12px">
+    <input id="search" class="form-control" autocomplete="false" type="search" placeholder="Cerca un evento" aria-label="Search" style="border-color: black ; border-width: 4px; border-top-width: 8px; background-color: whitesmoke; border-radius: 12px">
     <span class="material-symbols-outlined" action="search.php">search</span>
   </div>
 

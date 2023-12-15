@@ -16,6 +16,7 @@ else{
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
         <?php require_once 'scripts\connection.php';?>
+        <?php require_once 'scripts\script.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>

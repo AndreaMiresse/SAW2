@@ -65,16 +65,9 @@
                     for (var i = 0; i < inputs.length; i++){
                         inputs[i].readOnly = false;
                     }
-                    
-                   
                 }
             </script>
-                
-
     </body>
-         
-
-
 </html>
 
 

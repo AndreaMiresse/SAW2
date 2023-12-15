@@ -23,11 +23,12 @@
                     $_SESSION['name']=$row['Name'];
                     $_SESSION['admin']=$row['admin'];
                     header("Location: admin.php");
+                }else{
+                    $_SESSION['user_id']= $row['User_id'];
+                    $_SESSION['name']=$row['Name'];
+                    header("Location: home.php");
                 }
-                $_SESSION['user_id']= $row['User_id'];
-                $_SESSION['name']=$row['Name'];
-                
-                header("Location: home.php");
+               
             }
         }
     

@@ -149,7 +149,7 @@ else{
                 <div class="col-4">
                     <p style="font-size: 22px; font-weight: medium; margin-bottom: 0px; margin-top: 1rem; margin-left: 1rem;">Non trovi quello che cerchi?<br>O semplicemente vuoi organizzarti a tuo modo? <br>Crea un evento,invita i tuoi amici e preparati a trovarne di nuovi!</p>
                     <div class="center">
-                    <button type="button" class="button">Crea un evento</button>
+                    <button type="button" class="button" onclick="window.location ='eventi.php'">Crea un evento</button>
                     </div>
                 </div>
 

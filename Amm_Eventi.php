@@ -37,6 +37,7 @@ else{
                     echo "<div class='card-body'>";
                     echo "<h5 class='card-title'>" . htmlspecialchars($row['nome_evento']) . "</h5>";
                     echo "<p class='card-text'>" . htmlspecialchars($row['luogo']) . "</p>";
+                    echo "<p class='card-text'>" . htmlspecialchars($row['id']) . "</p>";
                     echo "</div>";
                     echo "</div>";
                     echo"<button>Approva</button>";
