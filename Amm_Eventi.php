@@ -40,7 +40,10 @@ else{
                     echo "<p class='card-text'>" . htmlspecialchars($row['id']) . "</p>";
                     echo "</div>";
                     echo "</div>";
-                    echo"<button>Approva</button>";
+                    echo"<form action='scripts\Up_Eventi.php' method='post'>";
+                    echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
+                    echo"<input type='submit' name='submit' value='Approva'>";
+                    echo"</form>"; 
                 }    
             }
             if($flag==0){
