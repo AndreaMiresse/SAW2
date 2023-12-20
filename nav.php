@@ -20,7 +20,10 @@
 
 
   <div class="center">
-    <input id="search" class="form-control" autocomplete="nope" type="search" placeholder="Cerca un evento" aria-label="Search" style="border-color: black ; border-width: 4px; border-top-width: 8px; background-color: whitesmoke; border-radius: 12px">
+  <form autocomplete="off" method="post" action="">
+    <input autocomplete="false" name="hidden" type="text" style="display:none;">
+    <input id="search" class="form-control" autocomplete="off" type="search" placeholder="Cerca un evento" aria-label="Search" style="border-color: black ; border-width: 4px; border-top-width: 8px; background-color: whitesmoke; border-radius: 12px">
+    </form>
     <span class="material-symbols-outlined" action="search.php">search</span>
   </div>
 

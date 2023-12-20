@@ -7,56 +7,38 @@ else{
     throw new RuntimeException("non sei loggato");
     header("Location: login.php");
 }
+    require_once ('scripts\connection.php');
+    $sql = "SELECT * FROM evento";
+    $result= $con->query($sql);
 ?>
-
 <!DOCTYPE html>
 
     <head>
-        <title>Search</title>
+        <title>Home</title>
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
-        <?php require_once 'scripts\connection.php';?>
         <?php require_once 'scripts\script.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
-
     <body>
-    <h2>Crea il tuo evento</h2>
-    <form action="creazione_Evento.php"  method="post">
-        <div class="text-center">    
-                <input type="text" name="nome_evento" placeholder="Nome evento">
-                </div><br>
-                <div class="text-center">
-                <input type="text" name="luogo" placeholder="Luogo">
-                </div><br>
-                <div class="text-center">
-                <input type="text-center" name="n_par_max" placeholder="Numero partecipanti">
-                <div class="text-center"><br>
-
-                <label for="id_sport">Scegli lo sport:</label>
-                <select id="id_sport" name="id_sport" >
-                <?php
-                    $sql = "SELECT id,nome FROM sport";
-                    $result = $con->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        echo '<option value="" selected>...</option>';
-                        while($row = $result->fetch_assoc()) {
-                            echo '<option value="'.$row["id"].'">'.$row["nome"].'</option>';
-                        }
-                    } else {
-                    echo "0 results";
-                    }
-                    $con->close();
-                ?>
-                
-                </select>
-                </div><br>
-                <div class="text-center">
-                    
-                <input type="submit" name="submit" value="Crea evento">
-                </div>
-    </form>
-
+        <?php
+            $flag=0;
+            while($row = $result->fetch_assoc()){
+                if($row['approvato']==1){
+                    $flag=1;
+                    $nome=$row['nome_evento'];
+                    echo "<div class='card' style='width: 18rem;'>";
+                    echo "<div class='card-body'>";
+                    echo "<h5 class='card-title'><a href='evento_singolo.php?message=" . urlencode($nome) . "'>" . $row['nome_evento'] . "</a></h5>";                   
+                    echo "<p class='card-text'>" . $row['luogo'] . "</p>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+            }
+            if($flag==0){
+                echo "<h1>Non ci sono eventi</h1>";
+            }
+        ?>
     </body>
+</html>

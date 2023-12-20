@@ -28,6 +28,11 @@
 			<input type="password" name="confirm" placeholder=" Conferma password"><br><br>
 			</div>
 			<div class="text-center">
+			<label>
+            <input type="checkbox" name="newsletter"> Iscrivimi alla newsletter per non perdere nessun evento!
+        	</label>
+			</div>
+			<div class="text-center">
 			<input type="submit" name="submit" value="Registrati"><br>
 			</div>
   		</form>

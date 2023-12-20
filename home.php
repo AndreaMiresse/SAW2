@@ -15,6 +15,7 @@ else{
         <title>Home</title>
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
+        <?php require_once 'scripts\script.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
@@ -140,7 +141,7 @@ else{
         
 
         <div class="center">
-        <button type="button" class="button">Vedi tutti gli eventi</button>
+        <button type="button" class="button" onclick="window.location ='eventi.php'">Vedi tutti gli eventi</button>
         </div>
         <p class="text-left" style="font-size: 50px; font-weight: bold; margin-bottom: 0px; margin-top: 1rem; margin-left: 1rem;">Ti senti propositivo?</p>
 
@@ -149,7 +150,7 @@ else{
                 <div class="col-4">
                     <p style="font-size: 22px; font-weight: medium; margin-bottom: 0px; margin-top: 1rem; margin-left: 1rem;">Non trovi quello che cerchi?<br>O semplicemente vuoi organizzarti a tuo modo? <br>Crea un evento,invita i tuoi amici e preparati a trovarne di nuovi!</p>
                     <div class="center">
-                    <button type="button" class="button" onclick="window.location ='eventi.php'">Crea un evento</button>
+                    <button type="button" class="button" onclick="window.location ='Crea_eventi.php'">Crea un evento</button>
                     </div>
                 </div>
 
@@ -225,7 +226,7 @@ else{
             </div>
         </div> -->
         
-        <?php include 'scripts\script.php';?>
+        
 
     </body>
 

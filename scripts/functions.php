@@ -46,10 +46,14 @@ function Signup() : void{
         $result = $stmt->get_result();
         $stmt->close();
         if($result->num_rows === 0) {
+            $news=0;
+            if(isset($_POST['newsletter'])){
+                $news=1;//se si è iscritto alla newsletter allora news=1
+            }
             $password=$_POST['pass'];
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $con->prepare("INSERT INTO user(Name,Surname,Email,Pass) VALUES(?,?,?,?)"); // preparo la query
-            $stmt->bind_param("ssss", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $hash); // passo ai parametri i valori
+            $stmt = $con->prepare("INSERT INTO user(Name,Surname,Email,Pass,newsletter) VALUES(?,?,?,?,?)"); // preparo la query
+            $stmt->bind_param("ssssi", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $hash,$news); // passo ai parametri i valori
             $stmt->execute();
            
     
@@ -153,14 +157,19 @@ function Validate_Evento(): void{
             $_POST['luogo'] =  htmlspecialchars($_POST['luogo']);
             $_POST['n_par_max'] =htmlspecialchars($_POST['n_par_max']);
             $_POST['id_sport'] = htmlspecialchars($_POST['id_sport']);
+            $_POST['descrizione'] = htmlspecialchars($_POST['descrizione']);
             $_POST['nome_evento'] = trim($_POST['nome_evento']);
             $_POST['luogo'] =  trim($_POST['luogo']);
             $_POST['n_par_max'] = trim($_POST['n_par_max']);
             $_POST['id_sport'] = trim($_POST['id_sport']);
+            $_POST['descrizione'] = trim($_POST['descrizione']);
             if((!preg_match("/^[a-zA-Z ]*$/",$_POST['nome_evento']))){
                 throw new RuntimeException('Formato del nome non valido');
             }
             if(!preg_match("/^[a-zA-Z ]*$/",$_POST['luogo'])){
+                throw new RuntimeException('Formato del luogo non valido');
+            }
+            if(!preg_match("/^[a-zA-Z0-9 .,!@#$%^&*()]*$/",$_POST['descrizione'])){
                 throw new RuntimeException('Formato del luogo non valido');
             }
             if(!preg_match("/^[0-9]*$/",$_POST['n_par_max'])){
@@ -181,8 +190,8 @@ function Crea_Evento() : void{
         Validate_Evento();
         include ('connection.php');
         $zero=0;
-        $stmt = $con->prepare("INSERT INTO evento(nome_evento, luogo, n_par_max, n_par_corr, id_sport) VALUES(?,?,?,?,?)"); // preparo la query
-        $stmt->bind_param("ssiii", $_POST['nome_evento'], $_POST['luogo'], $_POST['n_par_max'],$zero, $_POST['id_sport']); // passo ai parametri i valori
+        $stmt = $con->prepare("INSERT INTO evento(nome_evento, luogo, n_par_max, n_par_corr, id_sport, descrizione) VALUES(?,?,?,?,?,?)"); // preparo la query
+        $stmt->bind_param("ssiiis", $_POST['nome_evento'], $_POST['luogo'], $_POST['n_par_max'],$zero, $_POST['id_sport'],$_POST['descrizione']); // passo ai parametri i valori
         $stmt->execute();
         $stmt->close();
         $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni

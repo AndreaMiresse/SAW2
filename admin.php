@@ -27,7 +27,7 @@ else{
         <button onclick="window.location.href='Amm_Eventi.php';">
             Gestione Eventi
         </button>
-        <button onclick="window.location.href='Amm_Utenti';">
+        <button onclick="window.location.href='Amm_Utenti.php';">
             Gestione Utenti
         </button>
     </body>
