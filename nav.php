@@ -30,7 +30,7 @@
   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Ciao, <?php echo $_SESSION['name'];?></a>
   <ul class="dropdown-menu dropdown-menu-end">
     
-    <li><a class="dropdown-item" href="profile.php">Profilo</a></li>
+    <li><a class="dropdown-item" href="show_profile.php">Profilo</a></li>
     <script>
       var admin = <?php echo $_SESSION['admin'];?>;
       if(admin == 1){

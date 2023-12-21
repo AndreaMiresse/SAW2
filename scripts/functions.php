@@ -134,11 +134,11 @@ function Update() : void{
             $stmt->close();
             $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
     
-            header("Location: ..\profile.php"); // da aggiornare con prepared statement!!!
+            header("Location: ..\show_profile.php"); // da aggiornare con prepared statement!!!
         }
         else{
             echo "email già in uso, riprova";
-            header("Location: ..\profile.php");
+            header("Location: ..\show_profile.php");
             $con->close();
         }
         //LA PASSWORD VA MESSA DUE VOLTE PER CONFERMA

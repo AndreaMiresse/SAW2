@@ -37,7 +37,7 @@
 
 
         <button class="button" onclick="updateLayout()">Modifica</button>
-        <form id="formUpdate" action="scripts\update.php" method="post">
+        <form id="formUpdate" action="update_profile.php" method="post">
                 <br><div class="text-center">
                 <input type="text" name="firstname" placeholder="Nome" value=<?php echo $row['Name']?> readonly><br><br>
                 </div>

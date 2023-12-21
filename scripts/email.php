@@ -24,7 +24,7 @@
     $mail->SMTPAuth = true;
     $mail->Port = 465;
     $mail->Username = 'nuts25500@gmail.com';
-    $mail->Password = 'Deez.nuts69';
+    $mail->Password = 'gadf pkhd trbu cvqx';
     $mail->SMTPSecure = "ssl";
     $sql = "SELECT * FROM user WHERE newsletter=1";
     $result = $con->query($sql);
@@ -38,8 +38,10 @@
             $mail->addCC("cc@example.com"); 
             $mail->addBCC("bcc@example.com"); //Send HTML or Plain Text email 
             $mail->isHTML(true); 
-            $mail->Subject = "Subject Text"; 
-            $mail->Body = "<i>Mail body in HTML</i>";
+            $mail->Subject = $_POST['nome_evento']; 
+            $mail->Body = "
+                <p>Hey, secondo noi potrebbe interessarti questo evento sucaminkie:</p>
+                <a href='evento_singolo.php?message=" . urlencode($_POST['nome_evento']) . "'>clicca qui</a>";
             $mail->AltBody = "This is the plain text version of the email content"; 
             if(!$mail->send()) {
                 echo "Mailer Error: " . $mail->ErrorInfo; 
