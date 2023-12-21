@@ -14,7 +14,7 @@ require_once ('scripts\connection.php');
     $stmt =$con->prepare("SELECT * FROM evento WHERE nome_evento LIKE ? ");// possibile % da aggiungere
     $stmt->bind_param("s", $nome);
     $stmt->execute();
-    $result = $stmt->get_result();
+    $result = $stmt->get_result();//potremmo passare id evento per evitare doppioni
 
 
 ?>
@@ -30,6 +30,7 @@ require_once ('scripts\connection.php');
     <body>
         <?php 
             if($row= $result->fetch_assoc() ){
+                $iscrizione = $row['nome_evento'];
                 echo "<div class='container'>";
                 echo "<h3> ". $row['nome_evento'] ."</h3>";
                 echo "<p> ". $row['descrizione'] ."</p>";

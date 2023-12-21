@@ -35,6 +35,8 @@
       var admin = <?php echo $_SESSION['admin'];?>;
       if(admin == 1){
         document.write('<li><a class="dropdown-item" href="admin.php">Admin</a></li>');
+        document.write('<li><a class="dropdown-item" href="Amm_Eventi.php">Eventi</a></li>');
+        document.write('<li><a class="dropdown-item" href="Amm_Utenti.php">Utenti</a></li>');
       }
     </script>
     <li><a class="dropdown-item" href="logout.php">Logout</a></li>

@@ -6,5 +6,5 @@ DA FARE:
 -correggere include
 -css delle card
 -pagine di errore
--aggiustare tendina a nav
+
 

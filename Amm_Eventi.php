@@ -70,7 +70,7 @@ else{
                     echo"<form action='scripts\\email.php' method='post'>";
                     echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
                     echo"<input type='submit' name='submit' value='Invia mail'>";
-                    echo"</form>"; 
+                    echo"</form>";  
 
                 }    
             }
