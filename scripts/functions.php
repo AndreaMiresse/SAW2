@@ -116,16 +116,66 @@ function Update() : void{
 
         ValidateUpdate();
 
-        include ('connection.php');
+        require_once ('connection.php');
         // controllo sulla data di nascita
+        if($_POST['email']==$_SESSION['email']){//se l'email non è stata modificata
+            if(empty($_POST['pass'])){
+            $password=$_POST['pass'];
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+            $stmt = $con->prepare("UPDATE user SET Name=?, Surname=?, Pass=? WHERE User_id=?"); // preparo la query
+            $stmt->bind_param("sssi", $_POST['firstname'], $_POST['lastname'], $hash, $_SESSION['user_id']); // passo ai parametri i valori
+            $stmt->execute();
+            $stmt->close();
+            $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
     
+            header("Location: show_profile.php"); // da aggiornare con prepared statement!!!
+            }
+            else{
+                $stmt = $con->prepare("UPDATE user SET Name=?, Surname=? WHERE User_id=?"); // preparo la query
+                $stmt->bind_param("ssi", $_POST['firstname'], $_POST['lastname'], $_SESSION['user_id']); // passo ai parametri i valori
+                $stmt->execute();
+                $stmt->close();
+                $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
+        
+                header("Location: show_profile.php"); // da aggiornare con prepared statement!!!
+            }
+        }
+        else{//se l'email è stata modificata
+            $stmt = $con->prepare("SELECT * FROM user where email=? "); // controllo se ci sono gia utenti con la stessa email
+            $stmt->bind_param("s", $_POST['email']);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row=$result->fetch_assoc();
+            $stmt->close();
+            if($result->num_rows === 0) {
+                $password=$_POST['pass'];
+                $hash = password_hash($password, PASSWORD_DEFAULT);
+                $stmt = $con->prepare("UPDATE user SET Name=?, Surname=?, Email=?, Pass=? WHERE User_id=?"); // preparo la query
+                $stmt->bind_param("ssssi", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $hash, $_SESSION['user_id']); // passo ai parametri i valori
+                $stmt->execute();
+                $stmt->close();
+                $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
+        
+                header("Location: show_profile.php"); // da aggiornare con prepared statement!!!
+            }
+            else{
+                echo "email già in uso, riprova";
+                header("Location: show_profile.php");
+                $con->close();
+            }
+        }
+
+
+
+
+        
         $stmt = $con->prepare("SELECT * FROM user where email=? "); // controllo se ci sono gia utenti con la stessa email
-        $stmt->bind_param("s", $_SESSION['email']);
+        $stmt->bind_param("s", $_POST['email']);
         $stmt->execute();
         $result = $stmt->get_result();
         $row=$result->fetch_assoc();
         $stmt->close();
-        if($result->num_rows === 1) {
+        if($result->num_rows === 1 && $row['email']===$_SESSION['email']) {
             $password=$_POST['pass'];
             $hash = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $con->prepare("UPDATE user SET Name=?, Surname=?, Email=?, Pass=? WHERE User_id=?"); // preparo la query
@@ -134,11 +184,11 @@ function Update() : void{
             $stmt->close();
             $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
     
-            header("Location: ..\show_profile.php"); // da aggiornare con prepared statement!!!
+            header("Location: show_profile.php"); // da aggiornare con prepared statement!!!
         }
         else{
             echo "email già in uso, riprova";
-            header("Location: ..\show_profile.php");
+            header("Location: show_profile.php");
             $con->close();
         }
         //LA PASSWORD VA MESSA DUE VOLTE PER CONFERMA

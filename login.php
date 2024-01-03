@@ -19,13 +19,16 @@
             }
             else{
                 if($row['admin']==1){
+                    //login admin
                     $_SESSION['user_id']= $row['User_id'];
                     $_SESSION['name']=$row['Name'];
                     $_SESSION['admin']=$row['admin'];
                     header("Location: admin.php");
                 }else{
+                    //login user
                     $_SESSION['user_id']= $row['User_id'];
                     $_SESSION['name']=$row['Name'];
+                    $_SESSION['email']=$row['Email'];
                     header("Location: home.php");
                 }
                
