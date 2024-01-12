@@ -3,8 +3,10 @@
 
 
 function Validate() : void {
-	if((empty($_POST['firstname']))|| (empty($_POST['lastname']))|| (empty($_POST['email']))|| (empty($_POST['pass']))|| (empty($_POST['confirm'])) ){
-		throw new RuntimeException("un campo è vuoto");
+	if((empty($_POST['firstname'])) || (empty($_POST['lastname'])) || (empty($_POST['email'])) || (empty($_POST['pass'])) || (empty($_POST['confirm'])) ){
+		$_SESSION['error'] = "un campo è vuoto";
+        header("Location: signup.php");
+        exit();
 	}
 	else{
 		$_POST['firstname'] = htmlspecialchars($_POST['firstname']);
@@ -16,13 +18,19 @@ function Validate() : void {
 		$_POST['email'] = trim($_POST['email']);
 		$_POST['pass'] = trim($_POST['pass']);
 		if((!preg_match("/^[a-zA-Z]*$/",$_POST['firstname']))){
-			throw new RuntimeException('Formato del nome non valido');
+			$_SESSION['error'] = 'Formato del nome non valido';
+            header("Location: signup.php");
+            exit();
 		}
 		if(!preg_match("/^[a-zA-Z]*$/",$_POST['lastname'])){
-			throw new RuntimeException('Formato del cognome non valido');
+			$_SESSION['error'] = 'Formato del cognome non valido';
+            header("Location: signup.php");
+            exit();
 		}
 		if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-			throw new RuntimeException('Formato dell\'email non valido');
+			$_SESSION['error'] = 'Formato email non valido';
+            header("Location: signup.php");
+            exit();
 		}
 
 	}
@@ -38,8 +46,6 @@ function Signup() : void{
         $_POST["confirm"] = htmlspecialchars($_POST["confirm"]);
         $_POST["confirm"] = trim($_POST["confirm"]);
         include ('connection.php');
-        // controllo sulla data di nascita
-    
         $stmt = $con->prepare("SELECT * FROM user where email=? "); // controllo se ci sono gia utenti con la stessa email
         $stmt->bind_param("s", $_POST['email']);
         $stmt->execute();
@@ -119,16 +125,17 @@ function Update() : void{
         require_once ('connection.php');
         // controllo sulla data di nascita
         if($_POST['email']==$_SESSION['email']){//se l'email non è stata modificata
-            if(empty($_POST['pass'])){
-            $password=$_POST['pass'];
-            $hash = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $con->prepare("UPDATE user SET Name=?, Surname=?, Pass=? WHERE User_id=?"); // preparo la query
-            $stmt->bind_param("sssi", $_POST['firstname'], $_POST['lastname'], $hash, $_SESSION['user_id']); // passo ai parametri i valori
-            $stmt->execute();
-            $stmt->close();
-            $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
-    
-            header("Location: show_profile.php"); // da aggiornare con prepared statement!!!
+            if(!empty($_POST['pass'])){
+                //password modificata
+                $password=$_POST['pass'];
+                $hash = password_hash($password, PASSWORD_DEFAULT);
+                $stmt = $con->prepare("UPDATE user SET Name=?, Surname=?, Pass=? WHERE User_id=?"); // preparo la query
+                $stmt->bind_param("sssi", $_POST['firstname'], $_POST['lastname'], $hash, $_SESSION['user_id']); // passo ai parametri i valori
+                $stmt->execute();
+                $stmt->close();
+                $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
+        
+                header("Location: show_profile.php"); // da aggiornare con prepared statement!!!
             }
             else{
                 $stmt = $con->prepare("UPDATE user SET Name=?, Surname=? WHERE User_id=?"); // preparo la query
@@ -148,10 +155,20 @@ function Update() : void{
             $row=$result->fetch_assoc();
             $stmt->close();
             if($result->num_rows === 0) {
-                $password=$_POST['pass'];
-                $hash = password_hash($password, PASSWORD_DEFAULT);
-                $stmt = $con->prepare("UPDATE user SET Name=?, Surname=?, Email=?, Pass=? WHERE User_id=?"); // preparo la query
-                $stmt->bind_param("ssssi", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $hash, $_SESSION['user_id']); // passo ai parametri i valori
+                if(!empty($_POST['pass'])){
+                    //password modificata
+                    $password=$_POST['pass'];
+                    $hash = password_hash($password, PASSWORD_DEFAULT);
+                    $stmt = $con->prepare("UPDATE user SET Name=?, Surname=?, Email=?, Pass=? WHERE User_id=?"); // preparo la query
+                    $stmt->bind_param("ssssi", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $hash, $_SESSION['user_id']); // passo ai parametri i valori
+                    $stmt->execute();
+                    $stmt->close();
+                    $con->close();
+                }else{
+                    //password non modificata
+                    $stmt = $con->prepare("UPDATE user SET Name=?, Surname=?, Email=?, WHERE User_id=?"); // preparo la query
+                    $stmt->bind_param("sssi", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_SESSION['user_id']);
+                }
                 $stmt->execute();
                 $stmt->close();
                 $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
@@ -169,28 +186,28 @@ function Update() : void{
 
 
         
-        $stmt = $con->prepare("SELECT * FROM user where email=? "); // controllo se ci sono gia utenti con la stessa email
-        $stmt->bind_param("s", $_POST['email']);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $row=$result->fetch_assoc();
-        $stmt->close();
-        if($result->num_rows === 1 && $row['email']===$_SESSION['email']) {
-            $password=$_POST['pass'];
-            $hash = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $con->prepare("UPDATE user SET Name=?, Surname=?, Email=?, Pass=? WHERE User_id=?"); // preparo la query
-            $stmt->bind_param("ssssi", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $hash, $_SESSION['user_id']); // passo ai parametri i valori
-            $stmt->execute();
-            $stmt->close();
-            $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
+        // $stmt = $con->prepare("SELECT * FROM user where email=? "); // controllo se ci sono gia utenti con la stessa email
+        // $stmt->bind_param("s", $_POST['email']);
+        // $stmt->execute();
+        // $result = $stmt->get_result();
+        // $row=$result->fetch_assoc();
+        // $stmt->close();
+        // if($result->num_rows === 1 && $row['email']===$_SESSION['email']) {
+        //     $password=$_POST['pass'];
+        //     $hash = password_hash($password, PASSWORD_DEFAULT);
+        //     $stmt = $con->prepare("UPDATE user SET Name=?, Surname=?, Email=?, Pass=? WHERE User_id=?"); // preparo la query
+        //     $stmt->bind_param("ssssi", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $hash, $_SESSION['user_id']); // passo ai parametri i valori
+        //     $stmt->execute();
+        //     $stmt->close();
+        //     $con->close(); //ho aggiunto queste close ma non so se servono per forza, in teoria penso sia meglio chiudere le connessioni
     
-            header("Location: show_profile.php"); // da aggiornare con prepared statement!!!
-        }
-        else{
-            echo "email già in uso, riprova";
-            header("Location: show_profile.php");
-            $con->close();
-        }
+        //     header("Location: show_profile.php"); // da aggiornare con prepared statement!!!
+        // }
+        // else{
+        //     echo "email già in uso, riprova";
+        //     header("Location: show_profile.php");
+        //     $con->close();
+        // }
         //LA PASSWORD VA MESSA DUE VOLTE PER CONFERMA
         
     }	

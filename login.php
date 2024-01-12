@@ -15,7 +15,7 @@
             $row=$result->fetch_assoc();
             $hash = $row["Pass"];
             if(!password_verify($_POST['pass'], $hash)){
-                echo "password errata";
+                echo"<div class='alert alert-danger' role='alert'>Email o password errata</div>";
             }
             else{
                 if($row['admin']==1){

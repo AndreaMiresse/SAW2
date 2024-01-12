@@ -1,6 +1,6 @@
 <?php
     session_start();
-	if(isset($_SESSION['user_id'])){//se la sessione è settata fai
+	if(isset($_SESSION['user_id'])){//se la sessione è settata non puoi accedere alla pagina di registrazione
 		$utente = $_SESSION['user_id'];
 		header("Location: home.php");
 	}
@@ -14,7 +14,12 @@
 </head>
     
 <body>
-    <?php include ('navIndex.php');?>
+    <?php include ('navIndex.php');
+		if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
+			echo "<div class='alert alert-danger text-center' role='alert'>".$_SESSION['error']."</div>";
+			unset($_SESSION['error']);
+		}
+	?>
 		<h1 id="titr" class="text-center">Registrati</h1>
 		<form action="registration.php" method="post"> <!-- bisogna usare quello fornito dalla prof -->
 			<br><div class="text-center">
