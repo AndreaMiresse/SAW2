@@ -9,7 +9,7 @@ else{
         location="home.php";
     </script>';
 }
-    require_once ('scripts\connection.php');
+    require_once ('scripts/connection.php');
     $sql = "SELECT * FROM user";
     $result= $con->query($sql);
 ?>
@@ -18,7 +18,7 @@ else{
         <title>Home</title>
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
-        <?php include 'scripts\script.php';?>
+        <?php include 'scripts/script.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
@@ -33,7 +33,7 @@ else{
             echo "<p class='card-text'>Email: " . $row['Email'] . "</p>";
             echo "</div>";
             echo "</div>";
-            echo"<form action='scripts\Canc_Utenti.php' method='post'>";
+            echo"<form action='scripts/Canc_Utenti.php' method='post'>";
             echo "<input type='hidden' name='id' value='" . $row['User_id'] . "'>";
             echo"<input type='submit' name='submit' value='Ban'>";
             echo"</form>"; 

@@ -4,11 +4,11 @@ if(isset($_SESSION['user_id'])){//se la sessione è settata fai
     $utente = $_SESSION['user_id'];
 }
 else{
-    throw new RuntimeException("non sei loggato");
+    $_SESSION['error'] = "Devi prima effettuare il login";
     header("Location: login.php");
 }
  
-require_once ('scripts\connection.php');
+require_once ('scripts/connection.php');
     
     $nome = $_GET['message'];
     $stmt =$con->prepare("SELECT * FROM evento WHERE nome_evento LIKE ? ");// possibile % da aggiungere
@@ -23,7 +23,7 @@ require_once ('scripts\connection.php');
         <title>Home</title>
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
-        <?php require_once 'scripts\script.php';?>
+        <?php require_once 'scripts/script.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>

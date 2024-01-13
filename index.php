@@ -32,13 +32,13 @@
             </div>
             
             <div class="col-12 col-md-8">
-                <img src="sawIndex.png" alt="immagini di grandi sportivi" class="img-fluid mx-auto d-block">
+                <img src="media/sawIndex.png" alt="immagini di grandi sportivi" class="img-fluid mx-auto d-block">
             </div>
         </div>  
 
         <div class="row">
             <div class="col-12 col-md-5 order-2 order-md-1">
-                <img src="seiStatoBrasilato.jpg" alt="immagini di grandi sportivi" width="1536" height="1536">
+                <img src="media/seiStatoBrasilato.jpg" alt="immagini di grandi sportivi" width="1536" height="1536">
             </div>
 
             <div class="col-12 col-md-7 order-1 order-md-2">

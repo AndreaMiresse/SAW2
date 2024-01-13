@@ -1,10 +1,13 @@
 # SAW
 DA FARE:
--correggere regex in validate_Eventi
--newsletter
--validare descrizione dell'evento
--correggere include
--css delle card
--pagine di errore
+-PASSARE TEST
+-scorporare function(alla foschi maniera tm)
+-fixare update admin
+-mettere gli errori bene
+-validare html
+-fixare css
 
+
+opzionale:
+-carosello funzionante
 

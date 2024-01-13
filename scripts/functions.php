@@ -123,7 +123,7 @@ function Update() : void{
         ValidateUpdate();
 
         require_once ('connection.php');
-        // controllo sulla data di nascita
+       
         if($_POST['email']==$_SESSION['email']){//se l'email non è stata modificata
             if(!empty($_POST['pass'])){
                 //password modificata
@@ -138,6 +138,7 @@ function Update() : void{
                 header("Location: show_profile.php"); // da aggiornare con prepared statement!!!
             }
             else{
+                //password non modificata
                 $stmt = $con->prepare("UPDATE user SET Name=?, Surname=? WHERE User_id=?"); // preparo la query
                 $stmt->bind_param("ssi", $_POST['firstname'], $_POST['lastname'], $_SESSION['user_id']); // passo ai parametri i valori
                 $stmt->execute();

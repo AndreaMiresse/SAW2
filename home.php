@@ -15,7 +15,7 @@ else{
         <title>Home</title>
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
-        <?php require_once 'scripts\script.php';?>
+        <?php require_once 'scripts/script.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
@@ -38,7 +38,7 @@ else{
                 <div class="card-group">
 
                     <div class="card text-center" style="width: 22rem; height: auto">
-                        <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
                         <div class="card-body">
                             <div class="icon"><span class="material-symbols-outlined">sports_soccer</span></div>
                             <h5 class="card-title">Calcio</h5>
@@ -47,7 +47,7 @@ else{
                         </div>
 
                     <div class="card text-center" style="width: 22rem; ">
-                    <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <div class="icon"><span class="material-symbols-outlined">sports_basketball</span></div>
                         <h5 class="card-title">Basket</h5>
@@ -56,7 +56,7 @@ else{
                     </div>
 
                     <div class="card text-center" style="width: 22rem;">
-                    <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <div class="icon"><span class="material-symbols-outlined">sports_tennis</span></div>
                         <h5 class="card-title">Tennis</h5>
@@ -70,7 +70,7 @@ else{
                 <div class="carousel-item">
                     <div class="card-group">
                     <div class="card text-center" style="width: 22rem; height: auto">
-                        <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Calcio</h5>
                             <p class="card-text">Che sia a 5, 7 o 11, se ami il calcio troverai un sacco di partite per dimostrare il tuo valore!</p>
@@ -78,7 +78,7 @@ else{
                         </div>
 
                     <div class="card text-center" style="width: 22rem; ">
-                    <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Basket</h5>
                         <p class="card-text">Se tirare la tripla decisiva non ti desta alcuna preoccupazione, clicca e scopri le prossime partite in programma</p>
@@ -86,7 +86,7 @@ else{
                     </div>
 
                     <div class="card text-center" style="width: 22rem;">
-                    <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Tennis</h5>
                         <p class="card-text">Federer vs Nadal, Borg vs McEnroe, Williams vs Sharapova, se anche tu sei alla ricerca del tuo grande rivale sei nel posto giusto</p>
@@ -99,7 +99,7 @@ else{
                 <div class="carousel-item">
                 <div class="card-group">
                     <div class="card text-center">
-                        <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Calcio</h5>
                             <p class="card-text">Che sia a 5, 7 o 11, se ami il calcio troverai un sacco di partite per dimostrare il tuo valore!</p>
@@ -107,7 +107,7 @@ else{
                         </div>
 
                     <div class="card text-center" style="width: 22rem; ">
-                    <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Basket</h5>
                         <p class="card-text">Se tirare la tripla decisiva non ti desta alcuna preoccupazione, clicca e scopri le prossime partite in programma</p>
@@ -115,7 +115,7 @@ else{
                     </div>
 
                     <div class="card text-center" style="width: 22rem;">
-                    <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Tennis</h5>
                         <p class="card-text">Federer vs Nadal, Borg vs McEnroe, Williams vs Sharapova, se anche tu sei alla ricerca del tuo grande rivale sei nel posto giusto</p>

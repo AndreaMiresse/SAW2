@@ -31,23 +31,28 @@
     while($row = $result->fetch_assoc()){
         if($row['newsletter']==1){ 
             $mail->From = "nuts25500@gmail.com"; 
-            $mail->FromName = "Admin"; //To address and name 
+            $mail->FromName = "SawSporty"; //To address and name 
             $mail->addAddress($row['Email']);//Recipient name is optional
-            $mail->addAddress($row['Email']); //Address to which recipient will reply 
             $mail->addReplyTo("reply@yourdomain.com", "Reply"); //CC and BCC 
             $mail->addCC("cc@example.com"); 
             $mail->addBCC("bcc@example.com"); //Send HTML or Plain Text email 
             $mail->isHTML(true); 
             $mail->Subject = $_POST['nome_evento']; 
             $mail->Body = "
-                <p>Hey, secondo noi potrebbe interessarti questo evento sucaminkie:</p>
-                <a href='evento_singolo.php?message=" . urlencode($_POST['nome_evento']) . "'>clicca qui</a>";
+                <p>Hey, secondo noi potrebbe interessarti questo evento :</p>
+                <a href='https://saw21.dibris.unige.it/~S4968197/evento_singolo.php?message=" . urlencode($_POST['nome_evento']) . "'>clicca qui</a>";
             $mail->AltBody = "This is the plain text version of the email content"; 
             if(!$mail->send()) {
                 echo "Mailer Error: " . $mail->ErrorInfo; 
             } else { 
                 echo "Message has been sent successfully"; 
             }
+            $mail->clearAddresses();
+            $mail->clearCCs();
+            $mail->clearBCCs();
+            $mail->clearReplyTos();
         }
-    }    
+    }  
+    $con->close();
+    header("location: ../Amm_Eventi.php"); 
 ?>

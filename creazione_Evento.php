@@ -7,6 +7,6 @@
         throw new RuntimeException("non sei loggato");
         header("Location: login.php");
     }
-    require_once 'scripts\functions.php';
+    require_once 'scripts/functions.php';
     Crea_Evento();
 ?>

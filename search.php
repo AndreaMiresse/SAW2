@@ -8,7 +8,7 @@ else{
     header("Location: login.php");
 }
  
-require_once ('scripts\connection.php');
+require_once ('scripts/connection.php');
     
     $search = $_GET['search'];
     $search = htmlspecialchars($search);
@@ -27,7 +27,7 @@ require_once ('scripts\connection.php');
         <title>Search</title>
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
-        <?php include 'scripts\script.php';?>
+        <?php include 'scripts/script.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>

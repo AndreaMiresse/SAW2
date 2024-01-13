@@ -3,9 +3,9 @@
     if(!isset($_SESSION['user_id'])){
         header('location:login.php');
     }
-    require_once 'scripts\connection.php';
-    require_once 'scripts\functions.php';
-    require_once 'scripts\script.php';
+    require_once 'scripts/connection.php';
+    require_once 'scripts/functions.php';
+    require_once 'scripts/script.php';
     
     $stmt=$con->prepare("SELECT * FROM user WHERE User_id= ?");
     $stmt->bind_param("i",$_SESSION['user_id']);
@@ -13,6 +13,7 @@
     $result=$stmt->get_result();
     $row=$result->fetch_assoc();
     $stmt->close();
+    $con->close();
 
 
 
@@ -25,7 +26,7 @@
         <title>Il tuo profilo</title>
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
-        <?php require_once 'scripts\script.php';?>
+        <?php require_once 'scripts/script.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
         <link rel="stylesheet" href="./css/signup.css" type="text/css">
         

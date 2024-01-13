@@ -17,13 +17,13 @@ else{
         <title>Home</title>
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
-        <?php require_once 'scripts\connection.php';?>
-        <?php require_once 'scripts\script.php';?>
+        <?php require_once 'scripts/connection.php';?>
+        <?php require_once 'scripts/script.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
     <body>
-        <h2>AREA AMMINISTRATIVA Cospito libero</h2>
+        <h2>AREA AMMINISTRATIVA </h2>
         <button onclick="window.location.href='Amm_Eventi.php';">
             Gestione Eventi
         </button>
