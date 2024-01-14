@@ -23,6 +23,7 @@
                     $_SESSION['user_id']= $row['User_id'];
                     $_SESSION['name']=$row['Name'];
                     $_SESSION['admin']=$row['admin'];
+                    $_SESSION['email']=$row['Email'];
                     header("Location: admin.php");
                 }else{
                     //login user
@@ -51,7 +52,16 @@
     }
    
 ?>
-
+<script>
+    function validateForm() {
+        var x = document.forms["login"]["email"].value;
+        var y = document.forms["login"]["pass"].value;
+        if (x == "" || y == "") {
+            alert("Tutti i campi devono essere riempiti");
+            return false;
+        }
+    }
+</script>
 <!DOCTYPE html>
 <head>
   <?php include 'head.php';?>
