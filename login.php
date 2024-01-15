@@ -54,11 +54,12 @@
 ?>
 <script>
     function validateForm() {
-        var x = document.forms["login"]["email"].value;
-        var y = document.forms["login"]["pass"].value;
-        if (x == "" || y == "") {
+        var myform=document.getElementById("login");
+        for(i=0;i<myform.elements.lenght;i++){
+            if (!strValue(myform.element[i].value)) {
             alert("Tutti i campi devono essere riempiti");
             return false;
+        }
         }
     }
 </script>
