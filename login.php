@@ -52,17 +52,7 @@
     }
    
 ?>
-<script>
-    function validateForm() {
-        var myform=document.getElementById("login");
-        for(i=0;i<myform.elements.lenght;i++){
-            if (!strValue(myform.element[i].value)) {
-            alert("Tutti i campi devono essere riempiti");
-            return false;
-        }
-        }
-    }
-</script>
+
 <!DOCTYPE html>
 <head>
   <?php include 'head.php';?>
