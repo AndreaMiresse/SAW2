@@ -79,7 +79,7 @@
         </div>
 
         <div class="center" style="margin-top: 2%;">
-            <form name="login" action="login.php" method="post">
+            <form name="login" onclick="return validateForm()" action="login.php" method="post">
                 <div class="text-center">    
                 <input type="email" name="email" placeholder=" Email">
                 </div><br>
