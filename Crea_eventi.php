@@ -4,8 +4,9 @@ if(isset($_SESSION['user_id'])){//se la sessione è settata fai
     $utente = $_SESSION['user_id'];
 }
 else{
-    throw new RuntimeException("non sei loggato");
+    $_SESSION['error']="Accedi per vedere la pagina";
     header("Location: login.php");
+    exit();
 }
 ?>
 
@@ -22,6 +23,16 @@ else{
     </head>
 
     <body>
+        <?php
+            if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
+                        echo "<div class='alert alert-danger text-center' role='alert'>".$_SESSION['error']."</div>";
+                        unset($_SESSION['error']);
+            }
+            if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
+                echo "<div class='alert alert-success' role='alert'>".$_SESSION['success']."</div>";
+                unset($_SESSION['success']);
+            }
+        ?>
     <h2>Crea il tuo evento</h2>
     <form action="creazione_Evento.php"  method="post">
         <div class="text-center">    

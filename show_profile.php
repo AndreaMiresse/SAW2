@@ -1,7 +1,9 @@
 <?php
     session_start();
     if(!isset($_SESSION['user_id'])){
+        $_SESSION['error']="Devi prima accedere ";
         header('location:login.php');
+        exit();
     }
     require_once 'scripts/connection.php';
     require_once 'scripts/functions.php';
@@ -12,6 +14,7 @@
     $stmt->execute();
     $result=$stmt->get_result();
     $row=$result->fetch_assoc();
+    $_SESSION['email']=$row['Email'];
     $stmt->close();
     $con->close();
 
@@ -35,8 +38,16 @@
 
 
     <body>
-
-
+        <?php
+            if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
+			    echo "<div class='alert alert-danger text-center' role='alert'>".$_SESSION['error']."</div>";
+			    unset($_SESSION['error']);
+		    }
+            if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
+                echo "<div class='alert alert-success' role='alert'>".$_SESSION['success']."</div>";
+                unset($_SESSION['success']);
+            }
+        ?>
         <button class="button" onclick="updateLayout()">Modifica</button>
         <form id="formUpdate" action="update_profile.php" method="post">
                 <br><div class="text-center">

@@ -4,10 +4,15 @@ if((isset($_SESSION['user_id'])) && ($_SESSION['admin']==1)){//se la sessione è
     $utente = $_SESSION['user_id'];
 }
 else{
-    echo '<script type="text/javascript"> 
-        alert("OHHH DOVE CAZZO VUOI ANDARE CRETINO?");
-        location="home.php";
-    </script>';
+    $_SESSION['error']="Non puoi accedere a questa pagina";
+    if(isset($_SESSION['user_id'])){
+        header("Location: home.php");
+        exit();
+    }
+    else{
+        header("Location: login.php");
+        exit();
+    }
 }
     
 ?>

@@ -1,8 +1,9 @@
 <?php
     session_start();
 	if(isset($_SESSION['user_id'])){//se la sessione è settata non puoi accedere alla pagina di registrazione
-		$utente = $_SESSION['user_id'];
+		$_SESSION['error']="Sei già registrato, non puoi accedere alla pagina di registrazione";
 		header("Location: home.php");
+		exit();
 	}
 
 ?>

@@ -4,8 +4,9 @@
         $utente = $_SESSION['user_id'];
     }
     else{
-        throw new RuntimeException("non sei loggato");
+        $_SESSION['error']="Accedi per vedere la pagina";
         header("Location: login.php");
+        exit();
     }
     require_once 'scripts/functions.php';
     Crea_Evento();

@@ -14,7 +14,7 @@
 <body>
 
     <?php
-        include ('navIndex.php');
+        include 'navIndex.php';
     ?>
 
     <br>
@@ -38,7 +38,7 @@
 
         <div class="row">
             <div class="col-12 col-md-5 order-2 order-md-1">
-                <img src="media/seiStatoBrasilato.jpg" alt="immagini di grandi sportivi" width="1536" height="1536">
+                <img src="media/teamInfo3.jpg" alt="immagini di grandi sportivi" width="auto" height="auto">
             </div>
 
             <div class="col-12 col-md-7 order-1 order-md-2">

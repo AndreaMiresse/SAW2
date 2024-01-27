@@ -4,11 +4,12 @@ if(isset($_SESSION['user_id'])){//se la sessione è settata fai
     $utente = $_SESSION['user_id'];
 }
 else{
-    $_SESSION['error'] = "Devi prima effettuare il login";
+    $_SESSION['error']="Accedi per vedere la pagina";
     header("Location: login.php");
+    exit();
 }
  
-require_once ('scripts/connection.php');
+require_once 'scripts/connection.php';
     
     $nome = $_GET['message'];
     $stmt =$con->prepare("SELECT * FROM evento WHERE nome_evento LIKE ? ");// possibile % da aggiungere

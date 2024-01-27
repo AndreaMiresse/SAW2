@@ -4,10 +4,11 @@ if(isset($_SESSION['user_id'])){//se la sessione è settata fai
     $utente = $_SESSION['user_id'];
 }
 else{
-    throw new RuntimeException("non sei loggato");
+    $_SESSION['error']="Accedi per vedere la pagina";
     header("Location: login.php");
+    exit();
 }
-    require_once ('scripts/connection.php');
+    require_once 'scripts/connection.php';
     $sql = "SELECT * FROM evento";
     $result= $con->query($sql);
 ?>

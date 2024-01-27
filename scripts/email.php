@@ -4,10 +4,14 @@
         $utente = $_SESSION['user_id'];
     }
     else{
-        echo '<script type="text/javascript"> 
-            alert("OHHH DOVE CAZZO VUOI ANDRAE CRETINO?");
-            location="home.php";
-        </script>';
+        if(isset($_SESSION['user_id'])){
+            header("Location: home.php");
+            exit();
+        }
+        else{
+            header("Location: login.php");
+            exit();
+        }
     }
     require_once "connection.php";
     use PHPMailer\PHPMailer\PHPMailer;
@@ -43,16 +47,18 @@
                 <a href='https://saw21.dibris.unige.it/~S4968197/evento_singolo.php?message=" . urlencode($_POST['nome_evento']) . "'>clicca qui</a>";
             $mail->AltBody = "This is the plain text version of the email content"; 
             if(!$mail->send()) {
-                echo "Mailer Error: " . $mail->ErrorInfo; 
-            } else { 
-                echo "Message has been sent successfully"; 
+                $_SESSION['error']="Mailer Error: " . $mail->ErrorInfo; 
+                header("location: ../Amm_Eventi.php"); 
+                exit();
             }
-            $mail->clearAddresses();
-            $mail->clearCCs();
-            $mail->clearBCCs();
-            $mail->clearReplyTos();
         }
-    }  
+        $mail->clearAddresses();
+        $mail->clearCCs();
+        $mail->clearBCCs();
+        $mail->clearReplyTos();
+    }
     $con->close();
+    $_SESSION['success']="Mail inviate con successo";
     header("location: ../Amm_Eventi.php"); 
+    exit();
 ?>

@@ -4,15 +4,22 @@ if((isset($_SESSION['user_id'])) && ($_SESSION['admin']==1)){//se la sessione è
     $utente = $_SESSION['user_id'];
 }
 else{
-    echo '<script type="text/javascript"> 
-        alert("OHHH DOVE CAZZO VUOI ANDRAE CRETINO?");
-        location="home.php";
-    </script>';
+    if(isset($_SESSION['user_id'])){
+        header("Location: home.php");
+        exit();
+    }
+    else{
+        header("Location: login.php");
+        exit();
+    }
 }
     require_once ('scripts/connection.php');
     $sql = "SELECT * FROM user";
     $result= $con->query($sql);
 ?>
+
+
+
     <!DOCTYPE html>
     <head>
         <title>Home</title>
@@ -25,6 +32,14 @@ else{
     <body>
     <h2>AREA AMMINISTRATIVA Cospito libero</h2>
     <?php
+        if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
+            echo "<div class='alert alert-danger text-center' role='alert'>".$_SESSION['error']."</div>";
+            unset($_SESSION['error']);
+        }
+        if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
+            echo "<div class='alert alert-success' role='alert'>".$_SESSION['success']."</div>";
+            unset($_SESSION['success']);
+        }
         while($row = $result->fetch_assoc()){
             echo "<div class='card' style='width: 18rem;'>";
             echo "<div class='card-body'>";

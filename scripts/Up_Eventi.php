@@ -5,27 +5,28 @@
         $utente = $_SESSION['user_id'];
     }
     else{
-        echo '<script type="text/javascript"> 
-            alert("OHHH DOVE CAZZO VUOI ANDRAE CRETINO?");
-            location="home.php";
-        </script>';
+        if(isset($_SESSION['user_id'])){
+            header("Location: home.php");
+            exit();
+        }
+        else{
+            header("Location: login.php");
+            exit();
+        }    
     }
+
     require_once "connection.php";
     $sql= "UPDATE evento SET approvato=1 WHERE id={$_POST['id']}";
     $result = $con->query($sql);
     if($result){
-        echo "<script>
-        alert('Evento approvato!');
-        window.location.href='../Amm_Eventi.php';
-        </script>";
-    
-        
+        $_SESSION['success']="Evento approvato con successo";
+        header("Location: ../Amm_eventi.php");
+        exit();
     }
     else{
-        echo "<script>
-        alert('Errore, sei scarso');
-        window.location.href='../Amm_Eventi.php';
-    </script>";
+        $_SESSION['success']="Errore nell'approvazione dell'evento";
+        header("Location: ../Amm_eventi.php");
+        exit();
     
     }
     

@@ -14,8 +14,8 @@ require_once ('scripts/connection.php');
     $search = htmlspecialchars($search);
     $search = trim($search);
     $search= "%".$search."%";
-    $stmt =$con->prepare("SELECT * FROM evento WHERE nome_evento LIKE ? or luogo LIKE ?");// possibile % da aggiungere
-    $stmt->bind_param("ss", $search, $search);
+    $stmt =$con->prepare("SELECT * FROM evento WHERE nome_evento LIKE ? or luogo LIKE ? or id_sport LIKE ?");// possibile % da aggiungere
+    $stmt->bind_param("sss", $search, $search, $search);
     $stmt->execute();
     $result = $stmt->get_result();
 
