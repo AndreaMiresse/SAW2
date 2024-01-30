@@ -50,7 +50,7 @@
 <script>
   var search = document.getElementById("search");
   search.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13) {//quando è stato premuto invio parte
       event.preventDefault();
       window.location.href = "search.php?search=" + search.value;
     }

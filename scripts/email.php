@@ -37,9 +37,7 @@
             $mail->From = "nuts25500@gmail.com"; 
             $mail->FromName = "SawSporty"; //To address and name 
             $mail->addAddress($row['Email']);//Recipient name is optional
-            $mail->addReplyTo("reply@yourdomain.com", "Reply"); //CC and BCC 
-            $mail->addCC("cc@example.com"); 
-            $mail->addBCC("bcc@example.com"); //Send HTML or Plain Text email 
+            $mail->addReplyTo("nuts25500@gmail.com", "Reply"); 
             $mail->isHTML(true); 
             $mail->Subject = $_POST['nome_evento']; 
             $mail->Body = "

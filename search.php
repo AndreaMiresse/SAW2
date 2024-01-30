@@ -4,11 +4,11 @@ if(isset($_SESSION['user_id'])){//se la sessione è settata fai
     $utente = $_SESSION['user_id'];
 }
 else{
-    throw new RuntimeException("non sei loggato");
+    $_SESSION['error']="Devi prima registarti";
     header("Location: login.php");
 }
  
-require_once ('scripts/connection.php');
+require_once 'scripts/connection.php';
     
     $search = $_GET['search'];
     $search = htmlspecialchars($search);
@@ -44,10 +44,11 @@ require_once ('scripts/connection.php');
             while($row = $result->fetch_assoc()){
                 if($row['approvato'] == 1){
                 $approvati=1;
+                $nome = htmlspecialchars($row['nome_evento']);
                 echo "<div class='center'>";
                 echo "<div class='card' style='width: 18rem;'>";
                 echo "<div class='card-body'>";
-                echo "<h5 class='card-title'>" . htmlspecialchars($row['nome_evento']) . "</h5>";
+                echo "<h5 class='card-title'><a href='evento_singolo.php?message=" . urlencode($nome) . "'>" . $row['nome_evento'] . "</a></h5>";   
                 echo "<p class='card-text'>" . htmlspecialchars($row['luogo']) . "</p>";
                 echo "</div>";
                 echo "</div><br>";

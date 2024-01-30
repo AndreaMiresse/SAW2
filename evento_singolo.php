@@ -15,13 +15,14 @@ require_once 'scripts/connection.php';
     $stmt =$con->prepare("SELECT * FROM evento WHERE nome_evento LIKE ? ");// possibile % da aggiungere
     $stmt->bind_param("s", $nome);
     $stmt->execute();
-    $result = $stmt->get_result();//potremmo passare id evento per evitare doppioni
+    $result = $stmt->get_result();
+    //potremmo passare id evento per evitare doppioni
 
 
 ?>
 <!DOCTYPE html>
     <head>
-        <title>Home</title>
+        <title>Evento singolo</title>
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
         <?php require_once 'scripts/script.php';?>
@@ -31,6 +32,13 @@ require_once 'scripts/connection.php';
     <body>
         <?php 
             if($row= $result->fetch_assoc() ){
+                if($row['approvato']==0){
+                    if(!isset($_SESSION['admin'])){
+                        $_SESSION['error']="Non puoi accedere a questa pagina";
+                        header("Location: home.php");
+                        exit();
+                    }
+                }
                 $iscrizione = $row['nome_evento'];
                 echo "<div class='center' style='height: 30px'></div>";
                 echo "<div class='container'>";

@@ -23,13 +23,19 @@ else{
 
 
 
-    <body> <p class="text-center" style="font-size: 50px; font-weight: bold; margin-bottom: 0px; margin-top: 0px;"> Sei pronto per la tua prossima sfida?</p>
-    <?php
-        if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
-            echo "<div class='alert alert-danger text-center' role='alert'>".$_SESSION['error']."</div>";
-            unset($_SESSION['error']);
-        }
-    ?>
+    <body> 
+        <?php 
+            if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
+                echo "<div class='alert alert-danger text-center' role='alert'>".$_SESSION['error']."</div>";
+                unset($_SESSION['error']);
+            }
+            if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
+                echo "<div class='alert alert-success' role='alert'>".$_SESSION['success']."</div>";
+                unset($_SESSION['success']);
+            }
+        ?>
+    <p class="text-center" style="font-size: 50px; font-weight: bold; margin-bottom: 0px; margin-top: 0px;"> Sei pronto per la tua prossima sfida?</p>
+    
 
     <div id="carousel" class="container" style="margin-top: 0px; padding-bottom: 5px">
 
@@ -177,69 +183,7 @@ else{
                                     </div>
                                 </div>
 
-                                <!-- <div class="container">
 
-                                <div class="row">
-                                        <div class="col d-flex justify-content-center">
-                                         <div class="card text-center" style="width: 22rem; height: auto">
-                                            <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Calcio</h5>
-                                                <p class="card-text">Che sia a 5, 7 o 11, se ami il calcio troverai un sacco di partite per dimostrare il tuo valore!</p>
-                                            </div>
-                                            </div>   
-                                        </div>
-                                        <div class="col d-flex justify-content-center">
-                                            <div class="card text-center" style="width: 22rem;">
-                                            <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Basket</h5>
-                                                <p class="card-text">Se tirare la tripla decisiva non ti desta alcuna preoccupazione, clicca e scopri le prossime partite in programma</p>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        <div class="col d-flex justify-content-center">
-                                        <div class="card text-center" style="width: 22rem;">
-                                            <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Tennis</h5>
-                                                <p class="card-text">Federer vs Nadal, Borg vs McEnroe, Williams vs Sharapova, se anche tu sei alla ricerca del tuo grande rivale sei nel posto giusto</p>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row" style="margin-top: 5%; margin-bottom: 2%">
-                                        <div class="col d-flex justify-content-center">
-                                         <div class="card text-center" style="width: 22rem; height: auto">
-                                            <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Calcio</h5>
-                                                <p class="card-text">Che sia a 5, 7 o 11, se ami il calcio troverai un sacco di partite per dimostrare il tuo valore!</p>
-                                            </div>
-                                            </div>   
-                                        </div>
-                                        <div class="col d-flex justify-content-center">
-                                            <div class="card text-center" style="width: 22rem;">
-                                            <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Basket</h5>
-                                                <p class="card-text">Se tirare la tripla decisiva non ti desta alcuna preoccupazione, clicca e scopri le prossime partite in programma</p>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        <div class="col d-flex justify-content-center">
-                                        <div class="card text-center" style="width: 22rem;">
-                                            <img class="card-img-top" src="seiStatoBrasilato.jpg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Tennis</h5>
-                                                <p class="card-text">Federer vs Nadal, Borg vs McEnroe, Williams vs Sharapova, se anche tu sei alla ricerca del tuo grande rivale sei nel posto giusto</p>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                
                                 
 
                             </body>

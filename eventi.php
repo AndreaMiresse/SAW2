@@ -15,7 +15,7 @@ else{
 <!DOCTYPE html>
 
     <head>
-        <title>Home</title>
+        <title>Eventi</title>
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
         <?php require_once 'scripts/script.php';?>

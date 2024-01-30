@@ -20,12 +20,12 @@
     $result = $con->query($sql);
     if($result){
         $_SESSION['success']="Evento approvato con successo";
-        header("Location: ../Amm_eventi.php");
+        header("Location: ../Amm_Eventi.php");
         exit();
     }
     else{
         $_SESSION['success']="Errore nell'approvazione dell'evento";
-        header("Location: ../Amm_eventi.php");
+        header("Location: ../Amm_Eventi.php");
         exit();
     
     }

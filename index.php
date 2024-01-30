@@ -8,7 +8,7 @@
     
 <head>
     <?php require_once 'head.php';?>
-    <title>SawCospito</title>
+    <title>Index</title>
 </head>
 
 <body>
@@ -49,22 +49,6 @@
         </div>
 
     </div>
-
-
-    <!--<div class="container-fluid" name='description'>
-
-        <div class="container-fluid">
-            <h1>Benvenuto su SawCospito</h1>
-            <p>Sei un nuovo utente? <a href="signup.php">Registrati</a> per poter accedere al sito.</p>
-            <p>Sei già registrato? <a href="login.php">Accedi</a> se sei già registrato.</p>
-        </div>
-
-        <div class="container-fluid" name='img'>
-            <img src="sawIndex.png" alt="saw">
-        </div>
-
-    </div>-->
-
 
 <?php require_once './scripts/script.php';?>
 

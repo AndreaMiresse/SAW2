@@ -13,7 +13,7 @@ else{
 <!DOCTYPE html>
 
     <head>
-        <title>Search</title>
+        <title>Creazione Eventi</title>
         <?php require_once 'head.php';?>
         <?php require_once 'nav.php';?>
         <?php require_once 'scripts/connection.php';?>
