@@ -30,18 +30,20 @@ else{
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
+   <?php
+   if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
+        echo "<div class='alert alert-danger text-center' role='alert'>".$_SESSION['error']."</div>";
+        unset($_SESSION['error']);
+    }
+    if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
+        echo "<div class='alert alert-success' role='alert'>".$_SESSION['success']."</div>";
+        unset($_SESSION['success']);
+    }
+    ?> 
     <div class="center" style="margin-top: 20px">
     <h2>AREA AMMINISTRATIVA</h2>
     </div>
     <?php
-        if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
-                    echo "<div class='alert alert-danger text-center' role='alert'>".$_SESSION['error']."</div>";
-                    unset($_SESSION['error']);
-        }
-        if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
-            echo "<div class='alert alert-success' role='alert'>".$_SESSION['success']."</div>";
-            unset($_SESSION['success']);
-        }
         echo "<div class='center'>";
         echo "<h5>Eventi da approvare</h5><br>";
         echo"</div>";
