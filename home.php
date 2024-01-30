@@ -45,7 +45,7 @@ else{
                 <div class="card-group">
 
                     <div class="card text-center" style="width: 22rem; height: auto">
-                        <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="media/calcio.jpg" alt="Card image cap">
                         <div class="card-body">
                         <button onclick="window.location='search.php?search=1'" style="width: -webkit-fill-available; border: 0; background-color: whitesmoke"><div class="icon"><span class="material-symbols-outlined">sports_soccer</span></div></button>
                             <h5 class="card-title">Calcio</h5>
@@ -54,7 +54,7 @@ else{
                         </div>
 
                     <div class="card text-center" style="width: 22rem; ">
-                    <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="media/basket.jpg" alt="Card image cap">
                     <div class="card-body">
                         <button onclick="window.location='search.php?search=3'" style="width: -webkit-fill-available; border: 0; background-color: whitesmoke"><div class="icon"><span class="material-symbols-outlined">sports_basketball</span></div></button>
                         <h5 class="card-title">Basket</h5>
@@ -63,7 +63,7 @@ else{
                     </div>
 
                     <div class="card text-center" style="width: 22rem;">
-                    <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="media/tennis.jpeg" alt="Card image cap">
                     <div class="card-body">
                     <button onclick="window.location='search.php?search=2'" style="width: -webkit-fill-available; border: 0; background-color: whitesmoke"><div class="icon"><span class="material-symbols-outlined">sports_tennis</span></div></button>
                         <h5 class="card-title">Tennis</h5>
@@ -78,7 +78,7 @@ else{
                                         <div class="carousel-item">
                                         <div class="card-group">
                                         <div class="card text-center" style="width: 22rem; height: auto">
-                                                <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
+                                                <img class="card-img-top" src="media/swimming.webp" alt="Card image cap">
                                                 <div class="card-body">
                                                 <button onclick="window.location='search.php?search=4'" style="width: -webkit-fill-available; border: 0; background-color: whitesmoke"><div class="icon"><span class="material-symbols-outlined">sports_soccer</span></div></button>
                                                     <h5 class="card-title">Nuoto</h5>
@@ -87,7 +87,7 @@ else{
                                                 </div>
 
                                             <div class="card text-center" style="width: 22rem; ">
-                                            <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
+                                            <img class="card-img-top" src="media/pingpongsport.avif" alt="Card image cap">
                                             <div class="card-body">
                                                 <button onclick="window.location='search.php?search=5'" style="width: -webkit-fill-available; border: 0; background-color: whitesmoke"><div class="icon"><span class="material-symbols-outlined">sports_basketball</span></div></button>
                                                 <h5 class="card-title">Ping Pong</h5>
@@ -96,7 +96,7 @@ else{
                                             </div>
 
                                             <div class="card text-center" style="width: 22rem;">
-                                            <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
+                                            <img class="card-img-top" src="media/baseball.jpg" alt="Card image cap">
                                             <div class="card-body">
                                             <button onclick="window.location='search.php?search=6'" style="width: -webkit-fill-available; border: 0; background-color: whitesmoke"><div class="icon"><span class="material-symbols-outlined">sports_tennis</span></div></button>
                                                 <h5 class="card-title">Baseball</h5>
@@ -110,7 +110,7 @@ else{
                                         <div class="carousel-item">
                                         <div class="card-group">
                                         <div class="card text-center" style="width: 22rem; height: auto">
-                                                <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
+                                                <img class="card-img-top" src="media/rugby.webp" alt="Card image cap">
                                                 <div class="card-body">
                                                 <button onclick="window.location='search.php?search=7'" style="width: -webkit-fill-available; border: 0; background-color: whitesmoke"><div class="icon"><span class="material-symbols-outlined">sports_soccer</span></div></button>
                                                     <h5 class="card-title">Rugby</h5>
@@ -119,7 +119,7 @@ else{
                                                 </div>
 
                                             <div class="card text-center" style="width: 22rem; ">
-                                            <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
+                                            <img class="card-img-top" src="media/volleyball.webp" alt="Card image cap">
                                             <div class="card-body">
                                                 <button onclick="window.location='search.php?search=8'" style="width: -webkit-fill-available; border: 0; background-color: whitesmoke"><div class="icon"><span class="material-symbols-outlined">sports_basketball</span></div></button>
                                                 <h5 class="card-title">Pallavolo</h5>
@@ -128,7 +128,7 @@ else{
                                             </div>
 
                                             <div class="card text-center" style="width: 22rem;">
-                                            <img class="card-img-top" src="media/seiStatoBrasilato.jpg" alt="Card image cap">
+                                            <img class="card-img-top" src="media/golf.jpg" alt="Card image cap">
                                             <div class="card-body">
                                             <button onclick="window.location='search.php?search=9'" style="width: -webkit-fill-available; border: 0; background-color: whitesmoke"><div class="icon"><span class="material-symbols-outlined">sports_tennis</span></div></button>
                                                 <h5 class="card-title">Golf</h5>

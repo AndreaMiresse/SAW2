@@ -19,6 +19,7 @@ else{
         <?php require_once 'scripts/connection.php';?>
         <?php require_once 'scripts/script.php';?>
         <link  rel="stylesheet" type="text/css" href="./css/home.css">
+        <link  rel="stylesheet" type="text/css" href="./css/signup.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
 
@@ -33,7 +34,9 @@ else{
                 unset($_SESSION['success']);
             }
         ?>
-    <h2>Crea il tuo evento</h2>
+    <div class="center">
+    <h2 style="padding-top: 30px; padding-bottom: 20px">Crea il tuo evento</h2>
+    </div>
     <form action="creazione_Evento.php"  method="post">
         <div class="text-center">    
                 <input type="text" name="nome_evento" placeholder="Nome evento">

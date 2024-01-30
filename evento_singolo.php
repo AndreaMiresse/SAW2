@@ -32,10 +32,18 @@ require_once 'scripts/connection.php';
         <?php 
             if($row= $result->fetch_assoc() ){
                 $iscrizione = $row['nome_evento'];
+                echo "<div class='center' style='height: 30px'></div>";
                 echo "<div class='container'>";
+                echo "<div class='center'>";
                 echo "<h3> ". $row['nome_evento'] ."</h3>";
+                echo "</div>";
+                echo "<div class='center'>";
                 echo "<p> ". $row['descrizione'] ."</p>";
+                echo "</div>";
+                echo "<div class='center'>";
                 echo "<p> ". $row['luogo'] ."</p>";
+                echo "</div>";
+                echo "</div>";
             }
             ?>
     </body>

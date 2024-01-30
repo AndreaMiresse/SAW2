@@ -48,8 +48,8 @@
                 unset($_SESSION['success']);
             }
         ?>
-        <button class="button" onclick="updateLayout()">Modifica</button>
-        <form id="formUpdate" action="update_profile.php" method="post">
+
+            <form id="formUpdate" action="update_profile.php" method="post" style="margin-top: 30px">
                 <br><div class="text-center">
                 <input type="text" name="firstname" placeholder="Nome" value=<?php echo $row['Name']?> readonly><br><br>
                 </div>
@@ -64,6 +64,9 @@
                 </div>
                 <div class="text-center">
                 <input type="password" name="confirm" placeholder=" Conferma password" readonly><br><br>
+                </div>
+                <div class="text-center">
+                <button class="button" onclick="updateLayout()">Modifica</button>
                 </div>
                 <div class="text-center">
                 <input type="submit" name="submit" value="Salva"><br>

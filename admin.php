@@ -28,12 +28,22 @@ else{
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
     <body>
-        <h2>AREA AMMINISTRATIVA </h2>
-        <button onclick="window.location.href='Amm_Eventi.php';">
+
+        <div class="center">
+        <br><br><br><h2 style="margin-top: auto">AREA AMMINISTRATIVA</h2><br><br><br>
+        </div>
+
+        <div class="center">  
+        <button class="button" onclick="window.location.href='Amm_Eventi.php';">
             Gestione Eventi
         </button>
-        <button onclick="window.location.href='Amm_Utenti.php';">
+        </div>
+
+        <div class="center">
+        <button class="button" onclick="window.location.href='Amm_Utenti.php';">
             Gestione Utenti
         </button>
+        </div>
+        
     </body>
 </html>

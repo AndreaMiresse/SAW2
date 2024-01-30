@@ -40,15 +40,18 @@ require_once ('scripts/connection.php');
         }
         else{
             $approvati=0;
+            echo "<div class='center' style='height: 30px'></div>";
             while($row = $result->fetch_assoc()){
                 if($row['approvato'] == 1){
                 $approvati=1;
+                echo "<div class='center'>";
                 echo "<div class='card' style='width: 18rem;'>";
                 echo "<div class='card-body'>";
                 echo "<h5 class='card-title'>" . htmlspecialchars($row['nome_evento']) . "</h5>";
                 echo "<p class='card-text'>" . htmlspecialchars($row['luogo']) . "</p>";
                 echo "</div>";
                 echo "</div><br>";
+                echo "</div>";
                 }
             }
             if($approvati==0){

@@ -29,7 +29,7 @@ else{
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
-    <h2>AREA AMMINISTRATIVA Cospito libero</h2>
+    <h2>AREA AMMINISTRATIVA</h2>
     <?php
         if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
                     echo "<div class='alert alert-danger text-center' role='alert'>".$_SESSION['error']."</div>";
@@ -44,6 +44,7 @@ else{
             while($row = $result->fetch_assoc()){
                 if($row['approvato']==0){
                     $flag=1;
+                    echo "<div class='center'>";
                     echo "<div class='card' style='width: 18rem;'>";
                     echo "<div class='card-body'>";
                     echo "<h5 class='card-title'>" .$row['nome_evento']. "</h5>";
